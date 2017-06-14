@@ -1,0 +1,81 @@
+body{
+	margin: 0;
+    padding: 0;
+    background: url(../images/7.jpg) no-repeat;
+    repeat: no-repeat;
+    background-attachment:fixed;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/background.jpg', sizingMethod='scale');
+    -ms-filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/background.jpg', sizingMethod='scale');
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+	background-size:100% 800px;
+}
+
+.jumbotron {
+	padding: 3px;
+}
+
+a:hover{
+	cursor:pointer;
+	text-decoration:none;
+	color:orange;
+}
+
+.pages .current,.pages a {
+    text-decoration: none;
+    border:1px solid #5FA623;
+    margin:0 4px;
+    padding:4px 10px;
+    border-radius: 4px;
+
+}
+.pages .current,.pages a:hover{
+    background:#7AB63F;
+    color:#fff;
+}
+
+.header .title {
+    font-size:45px;
+    color:#31708f;
+}
+.header .title_desc{
+    color:#777;
+}
+
+.header .nav-justified{
+    font-size: 13px;
+}
+.header .location h5{
+    font-size: 13px;
+}
+
+.articles .ar_title{
+    font-size: 20px;
+    margin-top:0;
+    margin-bottom:5px;
+    letter-spacing:0.1rem;
+}
+.articles .list-inline{
+    font-size: 12px;
+    margin-bottom: 6px;
+    color:#8B0A50;
+}
+.articles .lead{
+    font-size: 14px;
+    letter-spacing:0.1rem;
+    color:#006400;
+    margin-bottom: 10px;
+}
+.articles .blockquote blockquote{
+    padding:0 20px;
+    margin:0 0 30px;
+
+}
+.articles .blockquote a{
+    font-size: 12px;
+}
+
+.articles .content h2{
+    font-size: 20px;
+}

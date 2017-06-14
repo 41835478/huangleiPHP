@@ -1,0 +1,28 @@
+<div class='col-xs-9 articles'>
+    <div class='col-xs-12'>
+        <div class='col-xs-12 text-center '>
+            <h3><?php echo $data['ar_title']; ?></h3>
+            <ul class="list-inline">
+                <li><span class="glyphicon glyphicon-edit" title="文章作者"></span> <?php echo $data['ar_author']; ?></li>
+                <li><span class="glyphicon glyphicon-th-list" title="分类"></span> <a href="{:U('/articles/category/'.$v[id])}"><?php echo $data['cat_name']; ?></a></li>
+                <li><span class="glyphicon glyphicon-tag" title="标签"></span>
+                    <?php
+                    $tags = explode(',',$data['tags']);
+                    $arr = array();
+                    $tags_id = explode(',',$data['tags_id']);
+                    foreach($tags as $k1 => $v1){
+                        $parameter = U('/articles/tag/'.$tags_id[$k1]);
+                        $arr[] = '<a href='."$parameter".'>'."$v1".'</a>';
+                    }
+                    echo implode('、',$arr);
+                    ?>
+                </li>
+                <li><span class="glyphicon glyphicon-time" title="时间"></span> <?php echo $data['ar_time']; ?></li>
+            </ul>
+        </div>
+        <div class='col-xs-12' style="border: 1px solid #FFB90F;padding:20px;background: #FCFCFC;border-radius: 5px;">
+            <?php echo $data['ar_content']; ?>
+        </div>
+    </div>
+
+</div>
