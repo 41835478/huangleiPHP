@@ -1,0 +1,229 @@
+
+<!--[if IE 6]>
+<script src="__PUBLIC__/js/iepng.js" type="text/javascript"></script>
+<script type="text/javascript">
+    EvPNG.fix('div, ul, img, li, input, a');
+</script>
+<![endif]-->
+<script type="text/javascript" src="__PUBLIC__/js/n_nav.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/milk_ban.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/paper_ban.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/baby_ban.js"></script>
+
+<style>
+    .span1{
+        width:65px;
+        height:20px;
+        text-align:center;
+        color:white;
+        border-radius:5px;
+        display:inline-block;
+        line-height:20px;
+        background:#FF9900;
+    }
+
+
+
+</style>
+<!--End Menu End--> 
+<div class="i_bg">
+
+    <div class="content mar_20">
+
+        <div class="l_list" style="width:100%;">
+        	<table border="0" style="width:100%; margin-bottom:30px; border:1px solid #eaeaea;" cellspacing="0" cellpadding="0">
+              <tr valign="top">
+                <td width="248"><div class="brand_img" style="height:150px;"><img src="<?php echo IMG_URL1.$store['store_logo_url'];?>" width="225" height="150" /></div></td>
+
+                  <td width="150" style="padding:15px 30px;">
+
+                      <a style="cursor: default;font-size:20px;color:blue;"><?php echo $store['store_name'];?></a><br />
+                      <p>
+
+                          描述相符 &nbsp; <span style="color:Red;"><?php echo $store_score['desc'];?> ↑</span><br>
+                          物流服务 &nbsp; <span style="color:Red;"><?php echo $store_score['logistics'];?> ↑</span><br>
+                          服务态度 &nbsp; <span style="color:Red;"><?php echo $store_score['service'];?> ↑</span><br>
+                            <a href="javascript:void(0);" style="width:140px;<?php echo $is_follow_store ?'background: #FF9900;': 'background: #ccc;';?>" class="span1" onclick="ajaxFollow(this,'<?php echo $_GET[store_id]?>','<?php echo $_SESSION[eater_uid];?>','店铺')">
+                                <?php if($is_follow_store){ ?>
+                                     已收藏
+                                <?php }else{?>
+                                     收藏店铺
+                                <?php }?>
+
+                            </a><br>
+                      </p>
+                  </td>
+                  <td class="td_b" style="padding:15px 40px;">
+
+                      <?php foreach($store_rec as $k => $v): ?>
+
+                	<span class="span1"
+                      <?php
+                        if($k == '店铺新品'){
+                            echo "style='background:#2D93CA;'";
+                        }else if($k == '打折特卖'){
+                            echo "style='background:orangered'";
+                        }
+                      ?>
+                      ><?php echo $k;?></span><br />
+                      <?php foreach($v as $k1 => $v1): ?>
+                    <a href="__CONTROLLER__/item/id/<?php echo $v1['id'];?>"><?php echo $v1['goods_jl_title']; ?></a>
+                      <?php endforeach; ?>
+                      <br>
+                    <?php endforeach; ?>
+
+
+                </td>
+              </tr>
+            </table>
+        	<div class="list_t">
+            	<span class="fl list_or">
+                    <a href="{:U('Index/store',getParameter('order','',false))}" <?php echo !$_GET['order'] ? 'class="now"' : '';?>>全部</a>
+                    <a href="#" class="sales <?php echo in_array($_GET['order'],array('sales_low','sales_up')) ? 'now':'';?>" style="width:100px;">
+                    	<span class="fl">
+                            <?php
+                                  if($_GET['order'] == 'sales_low'){
+                                    echo '销量从低到高';
+                                  }elseif($_GET['order'] == 'sales_up'){
+                                    echo '销量从高到低';
+                                  }else{
+                                    echo '销量';
+                                  }
+                            ?>
+
+                        </span>
+                        <ul style="display: none">
+                            <?php $sales_low = U('Index/store',getParameter('order','sales_low'));?>
+                            <?php $sales_up = U('Index/store',getParameter('order','sales_up'));?>
+                            <li onclick="location.href='<?php echo $sales_low;?>'">销量从低到高</li>
+                            <li onclick="location.href='<?php echo $sales_up;?>'">销量从高到低</li>
+                        </ul>
+                    </a>
+
+                    <a href="#" class="price <?php echo in_array($_GET['order'],array('price_low','price_up')) ? 'now':'';?>" style="width:100px;">
+                    	<span class="fl">
+                            <?php
+                                  if($_GET['order'] == 'price_low'){
+                                    echo '价格从低到高';
+                                  }elseif($_GET['order'] == 'price_up'){
+                                    echo '价格从高到低';
+                                  }else{
+                                    echo '价格';
+                                  }
+                            ?>
+                        </span>
+                        <ul style="display: none">
+                            <?php $price_low = U('Index/store',getParameter('order','price_low'));?>
+                            <?php $price_up = U('Index/store',getParameter('order','price_up'));?>
+                            <li onclick="location.href='<?php echo $price_low;?>'">价格从低到高</li>
+                            <li onclick="location.href='<?php echo $price_up;?>'">价格从高到低</li>
+                        </ul>
+                    </a>
+
+                    <a href="{:U('Index/store',getParameter('order','new'))}" <?php echo $_GET['order']=='new' ? 'class="now"' : '';?>>新品</a>
+                </span>
+                <span class="fr">共发现<?php echo count($goods);?>件</span>
+            </div>
+            <div class="list_c" style="width:100%;">
+            	
+                <ul class="cate_list" style="width:100%;">
+                    <?php foreach($goods as $k => $v): ?>
+                	<li style="height:350px;">
+                    	<div class="img"><a href="__CONTROLLER__/item/id/<?php echo $v['id'];?>"><img src="<?php echo IMG_URL . $v['goods_logo_url'];?>" width="210" height="185" /></a></div>
+                        <div class="price">
+                            <font>￥<span><?php echo $v['goods_shop_price'];?></span><label style="display: block;float: right;color:#888;cursor: text;font-size: 13px;"><?php echo $v['sales'].'人付款';?></label></font>
+                        </div>
+                        <div class="name" style="height:60px;font-size: 12px;line-height: 20px;"><a href="__CONTROLLER__/item/id/<?php echo $v['id'];?>"><?php echo $v['goods_title'];?></a></div>
+                        <div class="carbg">
+                        	<a href="#" <?php echo in_array($v['id'],$follow) ? "style='background-image:url(__PUBLIC__/images/heart_h.png);'":'';?> class="ss heart"  onclick="ajaxFollow(this,'<?php echo $v[id];?>','<?php echo $_SESSION[eater_uid];?>','商品')">
+                                <?php if(in_array($v['id'],$follow)){ ?>
+                                    取消
+                                <?php }else{ ?>
+                                    收藏
+                                <?php }?>
+                            </a>
+                            <a href="__CONTROLLER__/item/id/<?php echo $v['id'];?>" class="j_car">加入购物车</a>
+                        </div>
+                    </li>
+                    <?php endforeach; ?>
+
+                </ul>
+                <div class="pages">
+                    <?php echo $page;?>
+                	<!--<a href="#" class="p_pre">上一页</a><a href="#" class="cur">1</a><a href="#">2</a><a href="#">3</a>...<a href="#">20</a><a href="#" class="p_pre">下一页</a>-->
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="__PUBLIC__/layer/layer.js"></script>
+
+    <script>
+        // ajax 关注该商品
+        function ajaxFollow(obj,value_id,user_id,type){
+
+            // 如果用户没有登录，跳转到登录页面
+            if(user_id == "" || user_id != '<?php echo $_SESSION[eater_uid]?>'){
+                window.location.href="{:U('Login/login')}";
+                return false;
+            }
+            $.ajax({
+                type : 'post',
+                url  : '__CONTROLLER__/ajaxFollow',
+                data : {
+                    value_id : value_id,
+                    user_id  : user_id,
+                    type : type,
+                },
+                success : function(response){
+                    if(response.status){
+
+                        if(type == '商品'){
+                            $(obj).css('background-image',"url(__PUBLIC__/images/heart_h.png)");
+                            $(obj).html('取消');
+                        }else{
+                            $(obj).css('background','#FF9900');
+                            $(obj).html("已收藏");
+                        }
+
+
+                    }else{
+                        if(type == '商品'){
+                            $(obj).css('background-image',"url(__PUBLIC__/images/heart.png)");
+                            $(obj).html('收藏');
+                        }else{
+                            $(obj).css('background','#ccc');
+                            $(obj).html("收藏店铺");
+                        }
+
+                    }
+
+                }
+            });
+        }
+        $('.sales,.price').mouseover(function(){
+            $(this).find('ul').css('display','block');
+        });
+        $('.sales ul,.price ul').mouseleave(function(){
+            $(this).css('display','none');
+        });
+    </script>
+    <style>
+        .pages .current {
+            display: inline-block;
+            height:36px;
+            line-height: 36px;
+            text-align: center;
+            font-size: 16px;
+            color:#FFF;
+            background-color: #ff4e00;
+            border: 1px solid #ff4e00;
+            padding:0 12px;
+            margin:0 4px;
+            border-radius:2px;
+            overflow: hidden;
+
+        }
+    </style>
+

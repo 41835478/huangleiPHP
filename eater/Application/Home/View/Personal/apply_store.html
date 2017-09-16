@@ -1,0 +1,99 @@
+<script type="text/javascript" src="__PUBLIC__/layer/layer.js"></script>
+
+<div class="m_right">
+            <p></p>
+            <div class="mem_tit">申请店铺</div>
+           	<form enctype="multipart/form-data" id="form1">
+            <table border="0" style="width:880px; margin-top:20px;"  cellspacing="0" cellpadding="0">
+
+              <tr height="45">
+                <td align="right">店铺名称&nbsp; &nbsp;</td>
+                <td><input type="text" name="store_name" class="add_ipt" style="width:290px;" placeholder="请输入店铺名称，5-15个字符"/></td>
+
+              </tr>
+                <tr height="45">
+                    <td align="right">店铺logo图 &nbsp; &nbsp;</td>
+                    <td><input type="file" name="store_logo" /></td>
+                </tr>
+                <tr height="50">
+                    <td>&nbsp;</td>
+                    <td style="line-height:20px;">
+                        <font color="#ff4e00">提示：</font><br />
+                        logo图尺寸：150px * 100px<br>
+                        您可以上传以下格式的文件：gif、jpg、png、jpeg
+                    </td>
+                </tr>
+                <tr valign="top" height="110">
+                    <td>店铺主营商品类型描述 &nbsp; &nbsp;</td>
+                    <td style="padding-top:5px;"><textarea class="add_txt" name="store_major_type" placeholder="请详细阐述店铺主营商品类型，100字以内" style="resize:none"></textarea></td>
+                </tr>
+                <tr height="45">
+                    <td align="right">店铺主人姓名&nbsp; &nbsp;</td>
+                    <td><input type="text" name="store_owner_name" class="add_ipt" style="width:130px;" placeholder="请输入您的姓名"/></td>
+                </tr>
+                <tr height="45">
+                    <td align="right">店铺主人身份证号&nbsp; &nbsp;</td>
+                    <td><input type="text" name="store_owner_number" value="" class="add_ipt" style="width:290px;" placeholder="请输入18位身份证号"/></td>
+                </tr>
+                <tr height="45">
+                    <td>店铺主人手持身份证照片 &nbsp; &nbsp;</td>
+                    <td><input type="file" name="store_owner_img"/></td>
+                </tr>
+                <tr height="50">
+                    <td>&nbsp;</td>
+                    <td style="line-height:20px;">
+                        <font color="#ff4e00">提示：</font><br />
+                        您可以上传以下格式的文件：gif、jpg、png、jpeg<br>必须是本人手拿身份证照片，五官清晰，不可遮挡
+                    </td>
+                </tr>
+
+              <tr height="50" valign="bottom">
+                <td>&nbsp;</td>
+                <td><input type="button" value="提交申请" id="submit" class="btn_tj" /></td>
+              </tr>
+            </table>
+            </form>
+
+        </div>
+    </div>
+<script>
+    $(function(){
+        $('#submit').click(function() {
+            layer.confirm('确认要提交申请吗？', function (index) {
+                var form = new FormData($('#form1')[0]);
+
+                $.ajax({
+                    type: 'post',
+                    url: '__CONTROLLER__/apply_store',
+                    data: form,
+                    dataType: 'json',
+                    /*********后两行是关键，使用formdata传值，必须加这两行*********/
+                    processData: false,  // 告诉jQuery不要去处理发送的数据
+                    contentType: false,   // 告诉jQuery不要去设置Content-Type请求头
+                    success: function (response) {
+                        if (response.status) {
+
+                            $('#submit').attr('disabled', true).html('提交中..');
+
+                            layer.alert('申请成功，预计1-3日内审核完成！', {icon: 1, title: '提示'});
+                            setTimeout(function () {
+                                location.href = "__CONTROLLER__/apply_list";
+                                $('#submit').attr('disabled', false).html('提交申请');
+                            }, 1000);
+
+                        } else {
+                            layer.alert(response.result, {icon: 2, title: '提示'});
+                        }
+
+                    }
+
+
+                });
+
+                return false;
+            });
+        });
+
+
+    });
+</script>

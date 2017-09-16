@@ -1,0 +1,48 @@
+<include file="Public:header1" />
+<include file="Public:header2" />
+
+<div class="i_bg bg_color">
+    <!--Begin 用户中心 Begin -->
+    <div class="m_content">
+        <div class="m_left">
+            <div class="left_n">管理中心</div>
+
+            <div class="left_m">
+                <div class="left_m_t t_bg2">个人中心</div>
+                <ul>
+                    <li><a href="{:U('Personal/user')}" <?php echo ACTION_NAME == 'user' ? "class = 'now'" : '';?>>用户信息</a></li>
+                    <li><a href="{:U('Personal/follow',array('type'=>'商品'))}" <?php echo $_GET['type'] == "商品" && ACTION_NAME == 'follow' ? "class='now'" : '';?>>收藏商品</a></li>
+                    <li><a href="{:U('Personal/follow',array('type'=>'店铺'))}" <?php echo $_GET['type'] == "店铺" && ACTION_NAME == 'follow' ? "class='now'" : '';?>>收藏店铺</a></li>
+                    <li><a href="{:U('Personal/record')}" <?php echo ACTION_NAME == 'record' ? "class = 'now'" : '';?>>浏览记录</a></li>
+                </ul>
+            </div>
+            <div class="left_m">
+                <div class="left_m_t t_bg1">订单中心</div>
+                <ul>
+                    <li><a href="{:U('Personal/order')}" <?php echo ACTION_NAME == 'order' ? "class = 'now'" : '';?>>我的订单</a></li>
+                    <li><a href="{:U('Personal/address')}" <?php echo ACTION_NAME == 'address' ? "class = 'now'" : '';?>">收货地址</a></li>
+
+                </ul>
+            </div>
+            <div class="left_m">
+                <div class="left_m_t t_bg3">账户中心</div>
+                <ul>
+                    <li><a href="Member_Safe.html">账户安全</a></li>
+
+                    <li><a href="Member_Money.html">资金明细</a></li>
+                </ul>
+            </div>
+            <div class="left_m">
+                <div class="left_m_t t_bg4">成为商家</div>
+                <ul>
+                    <li><a href="{:U('Personal/apply_list')}" <?php echo ACTION_NAME == 'apply_list' ? "class='now'" : '';?>>我的申请</a></li>
+                    <li><a href="{:U('Personal/apply_store')}" <?php echo ACTION_NAME == 'apply_store' ? "class='now'" : '';?>>申请店铺</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+
+{__CONTENT__}
+
+<include file="Public:footer" />

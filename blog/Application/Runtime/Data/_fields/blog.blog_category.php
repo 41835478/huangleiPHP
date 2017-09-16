@@ -1,0 +1,1 @@
+a:6:{i:0;s:2:"id";i:1;s:8:"cat_name";i:2;s:9:"cat_order";i:3;s:15:"cat_show_status";s:3:"_pk";s:2:"id";s:5:"_type";a:4:{s:2:"id";s:11:"smallint(6)";s:8:"cat_name";s:11:"varchar(30)";s:9:"cat_order";s:11:"smallint(6)";s:15:"cat_show_status";s:23:"enum('启用','停用')";}}

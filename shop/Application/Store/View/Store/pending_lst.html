@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link href="__PUBLIC__/assets/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="__PUBLIC__/css/style.css"/>
+<link href="__PUBLIC__/assets/css/codemirror.css" rel="stylesheet">
+<link rel="stylesheet" href="__PUBLIC__/assets/css/ace.min.css" />
+<link rel="stylesheet" href="__PUBLIC__/font/css/font-awesome.min.css" />
+<!--[if lte IE 8]>
+<link rel="stylesheet" href="__PUBLIC__/assets/css/ace-ie.min.css" />
+<![endif]-->
+<script src="__PUBLIC__/js/jquery-1.9.1.min.js"></script>
+<script src="__PUBLIC__/assets/js/typeahead-bs2.min.js"></script>
+<script src="__PUBLIC__/js/lrtk.js" type="text/javascript" ></script>
+<script src="__PUBLIC__/assets/js/jquery.dataTables.min.js"></script>
+<script src="__PUBLIC__/assets/js/jquery.dataTables.bootstrap.js"></script>
+<script src="__PUBLIC__/assets/layer/layer.js" type="text/javascript" ></script>
+<title>店铺申请管理</title>
+</head>
+
+<body>
+<div class="page-content clearfix">
+    <div class="sort_style">
+
+        <div class="sort_list">
+            <table class="table table-striped table-bordered table-hover" id="sample-table">
+                <thead>
+                    <tr>
+                        <th width="50px">ID</th>
+                        <th width="120px">店铺名称</th>
+                        <th width="100px">店铺logo图</th>
+                        <th width="150px">店铺主营商品类型</th>
+                        <th width="30px">店铺主人姓名</th>
+                        <th width="130px">店铺主人身份证</th>
+                        <th width="150px">手持身份证照片</th>
+                        <th width="100px">申请人手机号</th>
+                        <th width="80px">申请时间</th>
+                        <th width="80px">审核状态</th>
+                        <th width="100px">操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php foreach($storeData as $k => $v): ?>
+                    <tr>
+
+                        <td><?php echo $v['id'];?></td>
+                        <td class="store_name"><?php echo $v['store_name'];?></td>
+                        <td><img src="<?php echo IMG_URL1.$v['store_logo_url'];?>" width="150" height="100"></td>
+                        <td><?php echo $v['store_major_type'];?></td>
+                        <td><?php echo $v['store_owner_name'];?></td>
+                        <td><?php echo $v['store_owner_number'];?></td>
+                        <td><img src="<?php echo IMG_URL1.$v['store_owner_img'];?>" width="150" height="200"></td>
+                        <td><?php echo $v['username'];?></td>
+                        <td><?php echo $v['time'];?></td>
+                        <td><?php echo $v['status'];?></td>
+
+                        <td class="td-manage">
+                            <a title="通过" href="javascript:;"  onclick="pass('<?php echo $v[id]?>')" class="btn btn-xs btn-success" ><i class="fa fa-check bigger-120"></i></a>
+                            <?php if($v['status'] != '审核未通过'){ ?>
+                            <a title="不通过" href="javascript:;" onclick="input_reason(this,'<?php echo $v[id];?>')" class="btn btn-xs btn-default sort_add" ><i class="fa fa-remove  bigger-120"></i></a>
+                            <?php }?>
+                            <?php if($v['nopass_reason']){?>
+                            <br><br><a href="javascript:void(0);" onclick="see_reason('<?php echo $v[id];?>')" class="btn btn-xs btn-default see_reason">不通过原因</a>
+                            <?php }?>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!--添加推荐-->
+<div class="sort_style_add margin" id="sort_style_add" style="display:none">
+    <form id="form1">
+  <div class="">
+     <ul>
+         <li>
+             <label class="label_name">店铺名称</label>
+             <div class="col-sm-9">&emsp;
+                 <span id="sname"></span>
+             </div>
+         </li>
+      <li>
+          <label class="label_name">不通过原因</label>
+          <div class="col-sm-9">
+              <textarea name="nopass_reason" class="form-control" id="form-field-8" placeholder="请说明不通过原因"></textarea>
+          </div>
+      </li>
+
+     </ul>
+  </div>
+    </form>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+    // ajax获取该店铺未通过原因
+function see_reason(id){
+    $.ajax({
+        type : 'post',
+        url : '__CONTROLLER__/ajaxGetReason/id/'+id,
+        success : function (response){
+            if(response.status){
+                layer.alert(response.result,{title:'不通过原因'});
+            }else{
+                layer.alert(response.result,{icon:2,time:1000});
+            }
+        }
+    });
+}
+    // 通过
+function pass(id){
+    layer.confirm('确认要通过审核吗？',function(index) {
+        $.ajax({
+            type: 'post',
+            url: '__CONTROLLER__/pass',
+            data: {
+                id: id,
+            },
+            success: function (response) {
+                if (response.status) {
+                    layer.alert(response.result, {icon: 1});
+                    setTimeout(function () {
+                        location.href = "__CONTROLLER__/pending_lst";
+                    }, 2000);
+                } else {
+                    layer.alert(response.result, {icon: 2, time: 1000});
+                }
+            }
+        });
+    });
+}
+
+    // 填写不通过原因
+function input_reason(obj,id){
+
+    var store_name = $(obj).parents('tr').find('.store_name').text();
+    $('#sname').html(store_name);
+
+    layer.open({
+        type: 1,
+        title: '不通过原因',
+        maxmin: true,
+        shadeClose: false, //点击遮罩关闭层
+        area : ['750px' , ''],
+        content:$('#sort_style_add'),
+        btn:['提交','取消'],
+        yes:function(index,layero){
+
+            $.ajax({
+                type : 'post',
+                url : '__CONTROLLER__/nopass',
+                data : {
+                    'id' : id,
+                    'nopass_reason' : $("textarea").val(),
+                },
+                dataType : 'json',
+                success : function(response){
+                    if(response.status){
+                        layer.msg(response.result,{icon:1,time:1000},function(){
+                            location.href="__CONTROLLER__/pending_lst";
+                        });
+                    }else{
+                        layer.alert(response.result,{icon:2,time:1000});
+                    }
+                }
+            });
+        }
+    });
+}
+
+
+//面包屑返回值
+var index = parent.layer.getFrameIndex(window.name);
+parent.layer.iframeAuto(index);
+$('.Order_form ,.ads_link').on('click', function(){
+	var cname = $(this).attr("title");
+	var cnames = parent.$('.Current_page').html();
+	var herf = parent.$("#iframe").attr("src");
+    parent.$('#parentIframe span').html(cname);
+	parent.$('#parentIframe').css("display","inline-block");
+    parent.$('.Current_page').attr("name",herf).css({"color":"#4c8fbd","cursor":"pointer"});
+	//parent.$('.Current_page').html("<a href='javascript:void(0)' name="+herf+">" + cnames + "</a>");
+    parent.layer.close(index);
+	
+});
+
+</script>
+<script type="text/javascript">
+jQuery(function($) {
+				var oTable1 = $('#sample-table').dataTable( {
+				"aaSorting": [[ 0, "desc" ]],//默认第几个排序
+		"bStateSave": false,//状态保存
+		"aoColumnDefs": [
+		  //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
+		  {"orderable":false,"aTargets":[1,2,3,4,5,6,7,10]}// 制定列不参与排序
+		] } );
+
+			})
+</script>

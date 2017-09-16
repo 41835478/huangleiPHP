@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link type="text/css" rel="stylesheet" href="__PUBLIC__/css/style.css" />
+    <script type="text/javascript" src="__PUBLIC__/js/jquery-1.11.1.min_044d0927.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/jquery.bxslider_e88acd1b.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/menu.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/select.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/lrscroll.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/iban.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/fban.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/f_ban.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/mban.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/bban.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/hban.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/tban.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/lrscroll_1.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/layer/layer.js"></script>
+
+    <title>eater商城</title>
+</head>
+<script>
+    $(function(){
+
+        $.ajax({
+            type : 'post',
+            url : "{:U('Login/ajaxChkUser')}",
+            dataType : 'json',
+            success : function(response){
+                var login_url = "<?php echo U('Login/login');?>";
+                var register_url = "<?php echo U('Login/register');?>";
+                var logout_url = "<?php echo U('Login/logout');?>";
+                var personal_url = "<?php echo U('Personal/user');?>";
+                if(response.status){
+                    $('#logo1').html("欢迎您：<a href='"+personal_url+"' style='color: #ff4e00;' target='_blank'>"+response.nickname+"</a> <a href='"+logout_url+"'>退出</a>&nbsp;");
+                    ajaxGetBuyCar();    //   获取购物车信息
+                }else{
+                    $('#logo1').html("<a href='"+login_url+"'>你好，请登录</a>&nbsp; <a href='"+register_url+"' style='color:#ff4e00;'>免费注册</a>&nbsp;");
+                }
+            }
+        });
+    });
+
+</script>
+<body>
+<!--Begin Header Begin-->
+<div class="soubg">
+    <div class="sou">
+
+        <!--End 所在收货地区 End-->
+        <span class="fr">
+        	<span class="fl">
+                <span id="logo1"></span>|&nbsp;<a href="{:U('Personal/order')}">我的订单</a>&nbsp;|</span>
+
+        	<span class="ss">
+            	<div class="ss_list">
+                    <a href="#">收藏夹</a>
+                    <div class="ss_list_bg">
+                        <div class="s_city_t"></div>
+                        <div class="ss_list_c">
+                            <ul>
+                                <li><a href="{:U('Personal/follow',array('type'=>'商品'))}">收藏的商品</a></li>
+                                <li><a href="{:U('Personal/follow',array('type'=>'店铺'))}">收藏的店铺</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="ss_list">
+                    <a href="#">卖家中心</a>
+                    <div class="ss_list_bg">
+                        <div class="s_city_t"></div>
+                        <div class="ss_list_c">
+                            <ul>
+                                <li><a href="{:U('Personal/apply_list')}">我的申请</a></li>
+                                <li><a href="{:U('Personal/apply_store')}">申请店铺</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="ss_list">
+                    <a href="#">关于网站</a>
+                    <div class="ss_list_bg">
+                        <div class="s_city_t"></div>
+                        <div class="ss_list_c">
+                            <ul>
+                                <li><a href="#" onclick="feedback()">意见反馈</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </span>
+        </span>
+    </div>
+</div>
+<div class="feedback" style="width:480px;height:280px;margin-top:20px;display: none;">
+    <textarea name="content" id="feedback" style="width:440px;height:280px;outline: none;resize: none;border:1px solid #fff;background:#FFFACD;padding:10px 20px;" placeholder="意见反馈.."></textarea>
+</div>
+<script>
+
+    function feedback(){
+        // 如果用户没有登录，跳转到登录页面
+        var user_id = "<?php echo $_SESSION[eater_uid]?>";
+        if(user_id == "" || typeof(user_id) == "undefined" ){
+            window.location.href="{:U('Login/login')}";
+            return false;
+        }
+        $('#feedback').val('');
+
+        layer.open({
+            type: 1,
+            title: '意见反馈',
+            maxmin: true,
+            skin: 'layui-layer-demo', //样式类名
+            shadeClose: false, //点击遮罩关闭层
+            area : ['600px' , '450px'],
+            content:$('.feedback'),
+            btn:['提交','取消'],
+            yes : function(){
+
+                $.ajax({
+                    type : 'post',
+                    url : "{:U('Index/feedback')}",
+                    data : {
+                        content : $('#feedback').val(),
+                    },
+                    success : function(response){
+
+                        if(response.status == 'error'){
+                            window.location.href="{:U('Login/login')}";
+                            return false;
+                        }
+
+                        if(response.status){
+                            layer.closeAll();
+                            layer.msg(response.result,{time:2000});
+                        }else{
+                            layer.alert(response.result,{icon:6,title:'提示'});
+                        }
+                    }
+                });
+
+            }
+        });
+
+    }
+
+
+</script>

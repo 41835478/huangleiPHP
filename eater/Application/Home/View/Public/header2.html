@@ -1,0 +1,290 @@
+<style>
+
+    #search_type .query{
+        width: 50px;
+        text-align :center;
+        display: inline-block;
+        margin :0;
+        padding: 0;
+    }
+
+    #search_type .yes{
+        background: #ff4e00;
+        color:white;
+    }
+    #shelper{
+
+
+        position: absolute;
+        z-index: 9999;
+        margin-left: 0;
+        margin-top:39px;
+        width:418px;
+
+        border: 1px solid #ccc;
+        background: #fff;
+
+    }
+    .search {
+        width: 520px;
+        height: 65px;
+        /*overflow:visible;*/
+        float: left;
+        display: inline;
+        margin-left: 134px;
+        margin-top: 50px;
+    }
+
+    .she_li{
+        width: 100%;
+        cursor: pointer;
+
+    }
+    .she_li p{
+        margin:0px;
+        display: block;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .she_li label{
+        font-weight: bold;
+
+    }
+    .she_li i {
+        font-style: normal;
+        font-size: 15px;
+        font-weight: 700;
+        color:Red;
+    }
+
+    .she_li span{
+        display:block;
+        float: right;
+        color:#aaa;
+    }
+
+    .she_li:hover{
+        background: rgb(228,228,228);
+    }
+
+</style>
+<script>
+    $(function(){
+        $('.query').click(function(){
+            $(this).addClass('yes').siblings('.query').removeClass('yes');
+
+            var type = $('.yes').html();
+            var val  = $("input[name='search']").val().trim();
+            if(val == ""){
+                $('#shelper').css('display','none');
+                return false;
+            }
+            kw_search(val,type);
+        });
+    });
+
+</script>
+<div class="top" style="z-index: 1">
+    <div class="logo" style="margin-top:50px;"><a href="{:U('Index/index')}"><img src="__PUBLIC__/images/logo.png"/></a></div>
+    <div class="search" style="">
+
+        <div id="search_type">
+            <a href="javascript:void(0);" class="query <?php echo ACTION_NAME != 'store_list' ? 'yes' : '';?>">商品</a>
+            <a href="javascript:void(0);" class="query <?php echo ACTION_NAME == 'store_list' ? 'yes' : '';?>" style="margin-left:-3px;">店铺</a>
+        </div>
+
+            <input type="text" name="search" class="s_ipt" id="search" value="<?php echo $_GET['content'];?>" style="outline: none;padding:0 5px;" autocomplete="off"/>
+            <input type="button" value="搜索" onclick="submit_search();" class="s_btn" style="outline: none;height:39px;"/>
+
+        <ul id="shelper" style="display: none"></ul>
+        <span class="fl">
+            <?php foreach($search_next_cat_rec as $k => $v): ?>
+            <a href="#"><?php echo $v['cat_name'];?></a>
+            <?php endforeach; ?>
+        </span>
+    </div>
+    <div class="i_car">
+        <div class="car_t">购物车 [ <span id="car_goods_number">0</span> ]</div>
+        <div class="car_bg">
+            <!--Begin 购物车未登录 Begin-->
+            <div class="un_login">您还未登录，<a href="{:U('Login/login')}" style="color:#ff4e00;">马上登录</a> 查看购物车~</div>
+            <!--End 购物车未登录 End-->
+            <!--Begin 购物车已登录 Begin-->
+            <div id="login" style="display: none;">
+                <ul class="cars">
+
+                </ul>
+                <div class="price_sum">共计&nbsp; <font color="#ff4e00">￥</font><span id="total_price"></span></div>
+                <div class="price_a"><a href="{:U('pay/showPayCar')}">查看我的购物车</a></div>
+            </div>
+            <!--End 购物车已登录 End-->
+        </div>
+    </div>
+</div>
+
+<script>
+
+
+    /* 给搜索按钮绑定一个按“回车”事件*/
+    $('body').keypress(function (e) {
+        var key = e.which; //e.which是按键的值
+        if (key == 13) {
+            submit_search();
+        }
+    });
+
+
+    /* 关闭关键词框 */
+    function close_search(){
+        $('#shelper').css('display','none');
+    }
+
+    /* 文本框输入内容，获取焦点事件 */
+    $('#search').bind('input propertychange focus',function(){
+        var val = $(this).val().trim();
+        if(val == ""){
+            $('#shelper').css('display','none');
+            return false;
+        }
+
+        var type = $('.yes').html();    // 查询类别
+        kw_search(val,type);
+    });
+
+    /* 点击搜索按钮，ajax查询，查询所有商品id，然后跳转到商品列表页面 */
+    function submit_search(keyword,type){
+
+        var content = $("input[name='search']").val().trim();
+        var t    = $('.yes').html();
+        if(keyword){
+            $("input[name='search']").val(keyword);
+            content = keyword;
+            t = type;
+        }
+        var app = "__APP__";
+        if(t == '店铺'){
+            location.href=app+"/Home/Index/store_list/content/"+encodeURI(content);
+        }else{
+            location.href=app+"/Home/Index/search/content/"+encodeURI(content);
+        }
+
+    }
+
+
+    /* 关键词查询 val：内容，type：商品或店铺 */
+    function kw_search(val,type){
+
+        $.ajax({
+
+            type : 'post',
+            url  : "{:U('Index/search_keywords')}",
+            data : {
+                keyword : val,
+                type    : type,
+            },
+
+            success : function(response){
+
+                if(response.status){
+
+                    var str = "";
+
+                    $.each(response.result,function(k,v){
+                        var keyword = v.keywords.replace(val,"<label>"+val+"</label>");
+                        str += '<li class="she_li" onclick="submit_search(\''+v.keywords+'\',\''+type+'\');"><p>'+keyword+'</p></li>';
+
+                    });
+                    str += '<li class="she_li" onclick="close_search();" style="text-align: right"><p><i>x</i> 关闭</p></li>';
+
+                    $('#shelper').html(str).css('display','block');
+
+                }else{
+                    $('#shelper').html('').css('display','none');
+                }
+            }
+
+        });
+
+    }
+
+        // 获取购物车中的最新三条数据，并更改页面中购物车旁边的数字为总数，以及显示购物车中的总额
+    function ajaxGetBuyCar(){
+
+
+        $.ajax({
+            type : 'post',
+            url : "{:U('Index/ajaxGetBuyCar')}",
+            dataType : 'json',
+            success : function(response){
+
+                if(response.status){
+
+                    $('#car_goods_number').html(response.total_rows);
+
+                    var str = '';
+
+                    var i = 0;
+                    $.each(response.cars,function(k,v){
+                        if(i == 3){
+                            return false;
+                        }
+
+                        var img_url = "<?php echo IMG_URL?>"+v.goods_logo_url;
+                        var goods_url = "<?php echo U('Index/item')?>"+'/id/'+v.id;
+
+                        str += "<li>";
+                        str += "<div class='img'><a href="+goods_url+"><img src="+img_url+" width='58' height='58' /></a></div>";
+
+                        str += "<div class='name'><a href="+goods_url+">"+v.goods_title+"</a></div>";
+                        var click = 'onclick='+'ajaxDelBuyCar(this,"'+v.only+'")';
+                        str += '<div class="price"><font color="#ff4e00">￥'+v.price+'</font> x'+v.number+'<a href="javascript:void(0);" '+click+' style="float:right">删除</a></div>';
+                        str += "</li>";
+                        i++;
+                    });
+
+
+                    $('.un_login').html("<b style='font-size:14px;'>购物车中共有 "+response.total_rows+" 件商品</b>");
+
+                    $('.cars').html(str);
+                    $('#total_price').html(response.total_price);
+                    $('#login').css('display','block');
+
+                }else{
+                    $('.un_login').html("<b>"+response.result+"</b>");
+                    $('#login').css('display','none');
+                }
+
+            }
+        });
+    }
+
+        // ajax删除购物车中的信息
+    function ajaxDelBuyCar(obj,only){
+
+        $.ajax({
+            type : 'post',
+            url : "{:U('Index/ajaxDelBuyCar')}",
+            data : {
+                only : only
+            },
+            success : function(){
+
+                var tr_num = $(obj).parents('table').find('tr').length;
+                // 购物车中该店铺的商品，仅有一件的时候，将店铺信息也要删除掉
+                if(tr_num == 2){
+                    $(obj).parents('.store_list').first().hide(200,function(){$(this).remove();});
+                }else{
+                    $(obj).parent().parent().hide(300,function(){
+                        $(this).remove();
+                    });
+                }
+                ajaxGetBuyCar();
+
+
+            },
+
+
+        });
+
+    }
+</script>

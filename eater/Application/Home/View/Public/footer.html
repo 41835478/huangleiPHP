@@ -1,0 +1,65 @@
+<!--Begin Footer Begin -->
+<div class="b_btm_bg b_btm_c">
+    <div class="b_btm">
+        <table border="0" style="width:210px; height:62px; float:left; margin-left:75px; margin-top:30px;" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="72"><img src="__PUBLIC__/images/b1.png" width="62" height="62" /></td>
+                <td><h2>正品保障</h2>正品行货  放心购买</td>
+            </tr>
+        </table>
+        <table border="0" style="width:210px; height:62px; float:left; margin-left:75px; margin-top:30px;" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="72"><img src="__PUBLIC__/images/b2.png" width="62" height="62" /></td>
+                <td><h2>满38包邮</h2>满38包邮 免运费</td>
+            </tr>
+        </table>
+        <table border="0" style="width:210px; height:62px; float:left; margin-left:75px; margin-top:30px;" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="72"><img src="__PUBLIC__/images/b3.png" width="62" height="62" /></td>
+                <td><h2>天天低价</h2>天天低价 畅选无忧</td>
+            </tr>
+        </table>
+        <table border="0" style="width:210px; height:62px; float:left; margin-left:75px; margin-top:30px;" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="72"><img src="__PUBLIC__/images/b4.png" width="62" height="62" /></td>
+                <td><h2>准时送达</h2>收货时间由你做主</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="b_nav">
+    <?php foreach($articles as $k => $v): ?>
+    <dl>
+        <dt><?php echo $v[0]['ar_cat_name'];?></dt>
+        <?php foreach($v as $k1 => $v1): ?>
+            <dd><a href="#"><?php echo $v1['ar_title'];?></a></dd>
+        <?php endforeach; ?>
+    </dl>
+    <?php endforeach; ?>
+
+    <div class="b_tel_bg">
+
+        <p>
+            服务热线：<br />
+            <span>130-7454-8734</span>
+        </p>
+    </div>
+    <div class="b_er">
+        <div class="b_er_c"><img src="__PUBLIC__/images/er.gif" width="118" height="118" /></div>
+    </div>
+</div>
+<div class="btmbg">
+    <div class="btm">
+        备案/许可证编号：黑ICP17000276号  Copyright © 2017-2020 eater商城 All Rights Reserved.<br />
+    </div>
+</div>
+<!--End Footer End -->
+
+
+</body>
+
+
+<!--[if IE 6]>
+<script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+</html>

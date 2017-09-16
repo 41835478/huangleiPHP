@@ -1,0 +1,66 @@
+<div class="m_right">
+    <div class="m_des">
+        <table border="0" style="width:870px; line-height:22px;" cellspacing="0" cellpadding="0">
+            <tr valign="top">
+                <td width="115"><img src="__PUBLIC__/images/touxiang.png" width="90" height="90" /></td>
+                <td>
+                    <div class="m_user"><?php echo $data['username'];?></div>
+                    <p>
+                        等级：<?php echo $level['now'];?> <br />
+                        <?php if($level['next']){ ?>
+                        <font color="#ff4e00">再消费 <?php echo $level['distance_next_level'];?> 元，即可达到 <?php echo $level['next'];?></font><br />
+                        <?php }else{?>
+                        <font color="#ff4e00">您已经达到最高等级</font>
+                        <?php }?>
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="mem_t">资产信息</div>
+    <table border="0" class="mon_tab" style="width:870px; margin-bottom:20px;" cellspacing="0" cellpadding="0">
+        <tr>
+            <td width="33%">用户等级：<span style="color:#555555;"><?php echo $level['now'];?></span></td>
+            <td width="33%">消费金额：<span>￥ <?php echo $data['total_cost'];?> 元</span> （确认收货后统计）</td>
+        </tr>
+        <tr>
+            <td>账户余额：<span>￥ <?php echo $data['money'];?> 元</span></td></td>
+            <td>账户积分：<span><?php echo $data['points'];?></span></td></td>
+        </tr>
+        <tr>
+            <td colspan="3">我的订单：
+                <font style="font-family:'宋体';">
+                    <a href="__CONTROLLER__/order/status/待付款">待付款 <span><?php echo $orders_count['待付款'] ? $orders_count['待付款'] : 0;?></span></a>  &nbsp; &nbsp; &nbsp; &nbsp;
+                    <a href="__CONTROLLER__/order/status/待发货">待发货 <span><?php echo $orders_count['待发货'] ? $orders_count['待发货'] : 0;?></span></a>  &nbsp; &nbsp; &nbsp; &nbsp;
+                    <a href="__CONTROLLER__/order/status/待收货">待收货 <span><?php echo $orders_count['待收货'] ? $orders_count['待收货'] : 0;?></span></a>  &nbsp; &nbsp; &nbsp; &nbsp;
+                    <a href="__CONTROLLER__/order/status/待评论">待评价 <span><?php echo $orders_count['待评价'] ? $orders_count['待评价'] : 0;?></span></a>
+                </font>
+            </td>
+        </tr>
+    </table>
+
+    <div class="mem_t">账号信息</div>
+    <table border="0" class="acc_tab" style="width:870px;" cellspacing="0" cellpadding="0">
+        <tr>
+            <td class="td_l">电  话：</td>
+            <td><?php echo substr_replace($data['username'],'****',3,4);?></td>
+        </tr>
+        <tr>
+            <td class="td_l">邮   箱： </td>
+            <td><?php echo substr_replace($data['email'],'*****',3,5);?></td>
+        </tr>
+        <tr>
+            <td class="td_l">注册时间：</td>
+            <td><?php echo $data['time'];?></td>
+        </tr>
+        <tr>
+            <td class="td_l">完成订单：</td>
+            <td><?php echo $orders_count['完成订单']+$orders_count['待评价'];?></td>
+        </tr>
+
+    </table>
+
+
+</div>
+</div>

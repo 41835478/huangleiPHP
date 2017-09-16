@@ -1,0 +1,189 @@
+<html>
+<head>
+    <title>黄磊个人博客</title>
+</head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="/blog/Public/Index/css/bootstrap.min.css">
+
+<script src="/blog/Public/Index/js/bootstrap.min.js"></script>
+
+<link rel="shortcut icon" type="image/x-icon" href="/blog/Public/Index/images/icon.ico" media="screen" />
+<script src="/blog/Public/Admin/js/jquery-1.9.1.min.js"></script>
+<link rel="stylesheet" href="/blog/Public/Index/css/style.css">
+<body>
+<div class="jumbotron">
+
+    <div class="container header">
+        <!-- ===================================header start=============================================== -->
+        <div class="col-xs-12">
+            <a href="/blog">
+                <h1 class="title">黄磊个人博客</h1>
+                <p class="title_desc">一个专注于php的小学生</p>
+            </a>
+        </div>
+        <div class="col-xs-12">
+            <ul class="nav nav-pills nav-justified">
+
+                <li class="active"><a href="/blog" class="category" title="Home">Home</a></li>
+                                <li ><a href="/blog/articles/category/3"  class="category" title="PHP">PHP</a></li><!--  class="active"-->
+                                <li ><a href="/blog/articles/category/1"  class="category" title="MySQL">MySQL</a></li><!--  class="active"-->
+                                <li ><a href="/blog/articles/category/2"  class="category" title="ThinkPHP">ThinkPHP</a></li><!--  class="active"-->
+                                <li ><a href="/blog/articles/category/5"  class="category" title="Js">Js</a></li><!--  class="active"-->
+                
+            </ul>
+        </div>
+        <!-- ===================================header end=============================================== -->
+        <div class='col-xs-12 location'>
+            <h5><span class="glyphicon glyphicon-home"></span> &nbsp;位置 ：<a href="/blog" id="home">Home </a>
+                > MYSQL添加外键时的注意事项            </h5>
+        </div>
+
+        <div class="row">
+            <!-- ===================================left article start=============================================== -->
+
+            <div class='col-xs-9 articles'>
+    <div class='col-xs-12'>
+        <div class='col-xs-12 text-center '>
+            <h3>MYSQL添加外键时的注意事项</h3>
+            <ul class="list-inline">
+                <li><span class="glyphicon glyphicon-edit" title="文章作者"></span> 黄磊</li>
+                <li><span class="glyphicon glyphicon-th-list" title="分类"></span> <a href="/blog/articles/category/5">MySQL</a></li>
+                <li><span class="glyphicon glyphicon-tag" title="标签"></span>
+                    <a href=/blog/articles/tag/1>Mysql</a>                </li>
+                <li><span class="glyphicon glyphicon-time" title="时间"></span> 2017-03-11 11:26:50</li>
+            </ul>
+        </div>
+        <div class='col-xs-12' style="border: 1px solid #FFB90F;padding:20px;background: #FCFCFC;border-radius: 5px;">
+            <p><span style="font-size: 14px;">sh_article_cat表</span></p><p><span style="font-size: 14px;">id 主键 自增长</span></p><p><br/></p><p><span style="font-size: 14px;">sh_article表<br/></span></p><p><span style="font-size: 14px;">ac_id &nbsp; 关联sh_article_cat的id</span></p><p><br/></p><p><span style="font-size: 14px;">CONSTRAINT fk_ar_ac FOREIGN KEY (ac_id) REFERENCES sh_articles_cat(id) ON</span></p><p><span style="font-size: 14px;">DELETE <span style="font-size: 14px; background-color: rgb(227, 108, 9);">RESTRICT</span> ON UPDATE <span style="font-size: 14px; background-color: rgb(227, 108, 9);">CASCADE</span></span></p><p><br/></p><p><span style="font-size: 14px;">声明一个外键ac_id取别名为fk_ar_ac，此外键受sh_articles_cat表中的id影响，sh_article_cat禁止删除，修改时sh_article中的ac_id会随之变化</span></p><p><br/></p><p><span style="font-size: 14px;">创建外键时，可以指定在删除、更新父表时，对子表进行的相应操作，包括RESTRICT、CASCADE、SET NULL 和 NO ACTION。</span></p><p><span style="font-size: 14px;">RESTRICT和NO ACTION相同，是指限制在子表有关联记录的情况下父表不能更新</span></p><p><span style="font-size: 14px;">CASCADE，是指父表在更新或删除时，更新或者删除子表对应记录</span></p><p><span style="font-size: 14px;">SET NULL ，是指父表在更新或删除时，子表的对应字段被SET NULL</span></p><p><br/></p><p><br/></p><p><span style="font-size: 14px;">需要注意的是，父表中的id不能是unsigned，需要保持数据类型相同，才可创建成功，</span></p><p><span style="font-size: 14px;">否则提示错误：Cannot add foreign key constraint</span></p><p><br/></p>        </div>
+    </div>
+
+</div>
+            <!-- ===================================left article end=============================================== -->
+
+
+            <!-- ===================================right start=============================================== -->
+            <div class='col-xs-3'>
+
+                <div class="col-xs-12">
+                    <h2>标签</h2>
+                    <ul  class="list-inline">
+                                                <li style="display:inline;line-height:18px;">
+                            <label class="middle">
+                                <a href="/blog/articles/tag/1" title="Mysql" style="cursor: pointer">
+                                    <span class="label" style="background:#5e5ca7;" >Mysql</span>
+                                </a>
+                            </label>
+                        </li>
+                                                <li style="display:inline;line-height:18px;">
+                            <label class="middle">
+                                <a href="/blog/articles/tag/2" title="thinkphp" style="cursor: pointer">
+                                    <span class="label" style="background:#9e005c;" >thinkphp</span>
+                                </a>
+                            </label>
+                        </li>
+                                                <li style="display:inline;line-height:18px;">
+                            <label class="middle">
+                                <a href="/blog/articles/tag/3" title="PHP" style="cursor: pointer">
+                                    <span class="label" style="background:#8fc63d;" >PHP</span>
+                                </a>
+                            </label>
+                        </li>
+                                                <li style="display:inline;line-height:18px;">
+                            <label class="middle">
+                                <a href="/blog/articles/tag/4" title="Session" style="cursor: pointer">
+                                    <span class="label" style="background:#6ccff7;" >Session</span>
+                                </a>
+                            </label>
+                        </li>
+                                                <li style="display:inline;line-height:18px;">
+                            <label class="middle">
+                                <a href="/blog/articles/tag/6" title="无限级分类" style="cursor: pointer">
+                                    <span class="label" style="background:#f68e54;" >无限级分类</span>
+                                </a>
+                            </label>
+                        </li>
+                                                <li style="display:inline;line-height:18px;">
+                            <label class="middle">
+                                <a href="/blog/articles/tag/7" title="字符集" style="cursor: pointer">
+                                    <span class="label" style="background:#00a650;" >字符集</span>
+                                </a>
+                            </label>
+                        </li>
+                                                <li style="display:inline;line-height:18px;">
+                            <label class="middle">
+                                <a href="/blog/articles/tag/8" title="cookie" style="cursor: pointer">
+                                    <span class="label" style="background:#bc8cbf;" >cookie</span>
+                                </a>
+                            </label>
+                        </li>
+                                                <li style="display:inline;line-height:18px;">
+                            <label class="middle">
+                                <a href="/blog/articles/tag/9" title="优化" style="cursor: pointer">
+                                    <span class="label" style="background:#fdc68c;" >优化</span>
+                                </a>
+                            </label>
+                        </li>
+                                                <li style="display:inline;line-height:18px;">
+                            <label class="middle">
+                                <a href="/blog/articles/tag/10" title="Js" style="cursor: pointer">
+                                    <span class="label" style="background:#a1410d;" >Js</span>
+                                </a>
+                            </label>
+                        </li>
+                                                <li style="display:inline;line-height:18px;">
+                            <label class="middle">
+                                <a href="/blog/articles/tag/11" title="jQuery" style="cursor: pointer">
+                                    <span class="label" style="background:#7c4900;" >jQuery</span>
+                                </a>
+                            </label>
+                        </li>
+                                            </ul>
+
+
+                </div>
+                <div class="col-xs-12">
+                    <h2>最近发布</h2>
+                    <ul style="font-weight:bold;color:red;">
+                                                <li><a href="/blog/articles/ar/33" style="font-weight:bold;">Js中函数参数设置默认值的方法</a></li>
+                                                <li><a href="/blog/articles/ar/32" style="font-weight:bold;">Js判断变量是否存在的方法</a></li>
+                                                <li><a href="/blog/articles/ar/31" style="font-weight:bold;">MYSQL添加外键时的注意事项</a></li>
+                                                <li><a href="/blog/articles/ar/25" style="font-weight:bold;">thinkphp3.2分页路由</a></li>
+                                                <li><a href="/blog/articles/ar/23" style="font-weight:bold;">PHP文件下载</a></li>
+                                                <li><a href="/blog/articles/ar/17" style="font-weight:bold;">jQuery按钮倒计时，点击</a></li>
+                                                <li><a href="/blog/articles/ar/16" style="font-weight:bold;">无限极分类（传统foreach集合parent_id实现）</a></li>
+                                                <li><a href="/blog/articles/ar/13" style="font-weight:bold;">PHP中cookie跨目录、跨域名访问</a></li>
+                                                <li><a href="/blog/articles/ar/12" style="font-weight:bold;">mysql 表锁（转）</a></li>
+                                                <li><a href="/blog/articles/ar/11" style="font-weight:bold;">php 文件锁（目的：处理并发，如：抢购商品）（转）</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="col-xs-12">
+                    <h2>阅读排行</h2>
+                    <ol style="font-weight:bold;color:green;">
+                                                <li><a href="/blog/articles/ar/33" style="font-weight:bold;">Js中函数参数设置默认值的方法</a></li>
+                                                <li><a href="/blog/articles/ar/31" style="font-weight:bold;">MYSQL添加外键时的注意事项</a></li>
+                                                <li><a href="/blog/articles/ar/10" style="font-weight:bold;">mysql中事务的使用</a></li>
+                                                <li><a href="/blog/articles/ar/1" style="font-weight:bold;">sql语句中的union用法，注意！（转）</a></li>
+                                                <li><a href="/blog/articles/ar/2" style="font-weight:bold;">php会话ID如何生成以及cookie被禁用后，session的设置</a></li>
+                                                <li><a href="/blog/articles/ar/32" style="font-weight:bold;">Js判断变量是否存在的方法</a></li>
+                                                <li><a href="/blog/articles/ar/6" style="font-weight:bold;">巧用引用，实现无限极分类（转）</a></li>
+                                                <li><a href="/blog/articles/ar/25" style="font-weight:bold;">thinkphp3.2分页路由</a></li>
+                                                <li><a href="/blog/articles/ar/16" style="font-weight:bold;">无限极分类（传统foreach集合parent_id实现）</a></li>
+                                                <li><a href="/blog/articles/ar/4" style="font-weight:bold;">无限级分类，整合成树形结果（非引用“&”）</a></li>
+                                            </ol>
+                </div>
+            </div>
+            <!-- ===================================right end=============================================== -->
+        </div>
+    </div>
+    <!-- ===================================footer start=============================================== -->
+    <br /><br /><br />
+    <div class="col-xs-12">
+        <ul class="list-inline text-center">
+            <li>Copyright &copy; 2017<a href="/blog/admin/index/index" target="_blank">.</a> 版权归 黄磊 本人所有. 备案号：黑ICP17000276号</li>
+        </ul>
+    </div>
+    <!-- ===================================footer end=============================================== -->
+</div>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<style>
+    .a_btn{
+        height: 35px;
+        line-height: 35px;
+        padding: 0 11px;
+        background: #02bafa;
+        border: 1px #26bbdb solid;
+        border-radius: 3px;
+        color:#fff;
+        /*color: #fff;*/
+        display: inline-block;
+        text-decoration: none;
+        font-size: 15px;
+        outline: none;
+    }
+    .a_btn:hover{
+        background: #2e8ded;
+        color:#fff;
+    }
+</style>
+
+<div class="log_bg">	
+    <div class="top">
+        <div class="logo"><a href="{:U('Index/index')}"><img src="__PUBLIC__/images/logo.png" /></a></div>
+    </div>
+	<div class="regist">
+    	<div class="log_img"><img src="__PUBLIC__/images/l_img.png" width="611" height="425" /></div>
+		<div class="reg_c">
+        	<form id="form1">
+            <table border="0" style="width:420px; font-size:14px; margin-top:20px;" cellspacing="0" cellpadding="0">
+              <tr height="50" valign="top">
+              	<td width="95">&nbsp;</td>
+                <td>
+                	<span class="fl" style="font-size:24px;">注册</span>
+                    <span class="fr">已有商城账号，<a href="__CONTROLLER__/login" style="color:#ff4e00;">我要登录</a></span>
+                </td>
+              </tr>
+                <tr height="25">
+                    <td></td>
+                    <td align="left" style="color:red;" id="message1"></td>
+
+                </tr>
+                <tr height="50">
+                    <td align="right"><font color="#ff4e00">*</font>&nbsp;昵称 &nbsp;</td>
+                    <td><input type="text" value="" name="nickname" class="l_user" placeholder="给自己起个昵称吧"/></td>
+                </tr>
+              <tr height="50">
+                <td align="right"><font color="#ff4e00">*</font>&nbsp;手机号 &nbsp;</td>
+                <td><input type="text" value="" name="username" class="l_tel" placeholder="请输入您的11号手机号"/></td>
+              </tr>
+              <tr height="50">
+                <td align="right"><font color="#ff4e00">*</font>&nbsp;密码 &nbsp;</td>
+                <td><input type="password" value="" name="password" class="l_pwd" placeholder="请输入6-10位密码"/></td>
+              </tr>
+              <tr height="50">
+                <td align="right"><font color="#ff4e00">*</font>&nbsp;确认密码 &nbsp;</td>
+                <td><input type="password" value="" name="c_password" class="l_pwd" placeholder="再次输入密码"/></td>
+              </tr>
+            <tr height="50">
+                <td align="right"><font color="#ff4e00">*</font>&nbsp;邮箱 &nbsp;</td>
+                <td><input type="text" value="" name="email" class="l_email" placeholder="请输入您的邮箱"/></td>
+            </tr>
+
+              <tr height="50">
+                <td align="right"> <font color="#ff4e00">*</font>&nbsp;验证码 &nbsp;</td>
+                <td>
+                    <input type="text" value="" name="code" class="l_ipt" placeholder="输入6位验证码"/>
+                    <a href="javascript:void(0);" onclick="get_code()" class="a_btn" id="get_code1"　title="点击获取验证码">获取验证码</a>
+                </td>
+              </tr>
+
+              <tr height="60">
+              	<td>&nbsp;</td>
+                <td>
+                    <input onclick="submit();" type="submit" value="立即注册" id="submit" class="log_btn" /></td>
+              </tr>
+            </table>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+        //验证用户名是否存在
+    function chkUsername(username){
+        var bool = false;
+        $.ajax({
+            type : 'post',
+            url : '__CONTROLLER__/chkUsername/username/'+username,
+            async:false,
+            success : function (data){
+                if(data == 1){
+                    bool = true;
+                }else{
+                    bool = false;
+                }
+            }
+        });
+        return bool;
+
+
+    }
+
+    function get_code(){
+
+        $('#message1').html(' ');
+        var phone = $("input[name='username']").val().trim();
+        var reg = /^\d{11}$/;
+        if(!reg.test(phone)){
+            $('#message1').html("请输入11位手机号！");
+            return false;
+        }
+        if(chkUsername(phone)){
+            $('#message1').html("该手机号已经被注册");
+            return false;
+        }
+
+        $.ajax({
+            type : 'post',
+            url : '__CONTROLLER__/get_code/username/'+phone,
+            dataType : 'json',
+            success : function (response){
+
+                if(response.status){
+                    $('#message1').html(response.result);
+
+                    var time = 60;
+                    $('#get_code1').css("background","#AAAAAA").attr("onclick","").html(time+"秒后，重新发送");
+
+                    var id = setInterval(function(){
+
+                        time--;
+                        $('#get_code1').html(time+"秒后，重新发送");
+                        if(time == 0){
+                            clearInterval(id);
+                            $('#get_code1').attr("onclick","get_code()").css('background','#02bafa').html("发送验证码");
+                        }
+                    },1000);
+
+                }else{
+                    $('#message1').html(response.result);
+                }
+            }
+        });
+        return false;
+    }
+
+
+    $('#submit').click(function(){
+        $('#message1').html('');
+        $.ajax({
+
+            type : 'post',
+            url : '__CONTROLLER__/register',
+            data : $('#form1').serialize(),
+            async:false,
+            dataType : 'json',
+            success : function(response){
+                if(response.status){
+
+                    $('#submit').attr('disabled',true);
+                    $('#submit').val('提交中..');
+                    setTimeout(function(){
+                        location.href="__CONTROLLER__/login";
+                        $('#submit').attr('disabled',false);
+                        $('#submit').val('立即注册');
+                    },1000);
+
+                }else{
+                    $('#message1').html(response.result);
+                    //layer.alert(response.result,{icon:2,title:'提示'});
+                }
+            }
+
+        });
+
+
+        return false;
+    });
+</script>
+

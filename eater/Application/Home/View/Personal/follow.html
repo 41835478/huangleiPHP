@@ -1,0 +1,63 @@
+<script type="text/javascript" src="__PUBLIC__/layer/layer.js"></script>
+
+    <div class="m_right">
+            <p></p>
+            <div class="mem_tit">
+            	<span class="fr" style="font-size:12px; color:#55555; font-family:'宋体'; margin-top:5px;">数目：<?php echo count($follow);?></span>收藏的<?php echo $_GET['type'];?>
+            </div>
+           	<table border="0" class="order_tab" style="width:930px;" cellspacing="0" cellpadding="0">
+              <tr>
+                  <?php if($_GET['type'] == '商品'){?>
+                    <td align="center" width="420">商品名称</td>
+                    <td align="center" width="180">价格</td>
+                    <td align="center" width="270">操作</td>
+                  <?php }else if($_GET['type'] == '店铺'){?>
+                      <td align="center" width="420">店铺名称</td>
+                      <td align="center" width="270">操作</td>
+                  <?php }?>
+              </tr>
+                <?php foreach($follow as $k => $v): ?>
+              <tr>
+                  <?php if($_GET['type'] == '商品'){?>
+                        <td style="font-family:'宋体';">
+                            <div class="sm_img"><img src="<?php echo IMG_URL.$v['goods_logo_url']?>" width="48" height="48" /></div>
+                            <a href="<?php echo U('Index/item',array('id'=>$v['value_id']))?>"><?php echo $v['goods_title'];?></a>
+                        </td>
+                        <td align="center">￥<?php echo $v['goods_shop_price'];?></td>
+                        <td align="center"><a href="<?php echo U('Index/item',array('id'=>$v['value_id']))?>" style="color:#ff4e00;">加入购物车</a>&nbsp; &nbsp; <a href="javascript:void(0);" onclick="cancel_follow(this,'<?php echo $v[id];?>')">删除</a></td>
+                  <?php }else if($_GET['type'] == '店铺'){?>
+                          <td style="font-family:'宋体';">
+                              <div class="sm_img" style="width:90px;"><img src="<?php echo IMG_URL1.$v['store_logo_url']?>" width="90" height="48" /></div>
+                              <?php echo $v['store_name'];?>
+                          </td>
+                          <td align="center"><a href="<?php echo U('Index/store',array('store_id'=>$v['value_id']))?>" style="color:#ff4e00;">进入店铺</a>&nbsp; &nbsp; <a href="javascript:void(0);" onclick="cancel_follow(this,'<?php echo $v[id];?>');">删除</a></td>
+                  <?php }?>
+              </tr>
+                <?php endforeach; ?>
+            </table>
+
+
+            
+        </div>
+    </div>
+	<!--End 用户中心 End-->
+        <script>
+                //  ajax 取消收藏
+            function cancel_follow(obj,id){
+                layer.confirm('确认要取消收藏吗？', function (index) {
+                    $.ajax({
+                        type : 'post',
+                        url : '__CONTROLLER__/cancel_follow/id/'+id,
+                        success : function(response){
+                            if(response.status){
+                                $(obj).parents('tr').hide(300,function(){$(this).remove();});
+                                layer.msg(response.result, {icon: 1, time: 1000});
+                            }else{
+                                layer.msg(response.result, {icon: 2, time: 1000});
+                            }
+                        }
+                    });
+                });
+
+            }
+        </script>

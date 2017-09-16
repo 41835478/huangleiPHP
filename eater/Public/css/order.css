@@ -1,0 +1,151 @@
+
+.pay-dz li{
+
+    width:202px;
+    height:89px;
+    padding:9px 23px 8px 12px;
+    margin:0 20px 20px ;
+    background: url(../images/confirmation-li-tu2.gif) no-repeat;
+    float:left;
+    cursor: pointer;
+    overflow: auto;
+    line-height: 15px;
+
+}
+.pay-dz li:hover{
+    background:url(../images/confirmation-li-tu1.gif) no-repeat;
+}
+.pay-dz li span{
+
+    color:black;
+    font-size: 14px;
+    font-weight: bold;
+}
+.pay-dz li p{
+    width:190px;
+    color:#7A7A7A;
+    font-size: 13px;
+
+}
+
+.pay-dz .current{
+    background: url(../images/confirmation-li-tu1.gif) no-repeat
+}
+#add_address li{
+    margin-bottom: 12px;
+}
+#add_address li input{
+    width:180px;
+    height:31px;
+    font-size: 14px;
+    /*padding: 0 10px;*/
+    border: 1px solid #E9E9E9;
+    padding: 0 10px;
+    margin-bottom: 12px;
+    margin-top:12px;
+}
+#add_address p{
+
+    width:100px;
+    float:left;
+    text-align: right;
+    font-size: 13px;
+    color:#000;
+    margin-right: 15px;
+    line-height: 31px;
+}
+#area{
+    width:100%;
+    height:30px;
+    padding-top:15px;
+
+}
+#add_address select{
+    width:150px;
+    display: inline-block;
+    float:left;
+    margin-left:30px;
+}
+/*border:4px solid #85a1d4;*/
+.active1:hover{
+    border:4px solid #85a1d4;
+}
+/*.tr1:hover{*/
+    /*border-style:solid;*/
+    /*border-color: #a6e5be;*/
+    /*cursor: default;*/
+    /*!*background: red;*!*/
+/*}*/
+
+/*.active1{*/
+    /*border:4px solid #85a1d4;*/
+/*}*/
+.itemlist{
+    position:relative;
+    width:150px;
+    height:40px;
+    float:left;
+    text-align: center;
+    /*bottom: -2px;*/
+    border-bottom: 2px solid #e8e8e8;
+    cursor: pointer;
+}
+.itemlist span{
+    line-height: 40px;
+    font-weight: 700;
+    font-family:Microsoft YaHei;
+
+}
+.itemlist label{
+    position:absolute;
+    width:1px;
+    height:20px;
+    top:-5px;
+    right:0;
+    color:#e8e8e8;
+}
+.itemlist:hover{
+    border-bottom-color:#ff6000;
+    color:#ff6000;
+}
+
+.item_active{
+    border-bottom-color:#ff6000;
+    color:#ff6000;
+}
+
+.order_btn{
+    display: inline-block;
+    width:70px;
+    height:25px;
+    text-align: center;
+    margin-left:10px;
+    border-radius: 3px;
+    border:1px solid gray;
+}
+.order_btn_active{
+    border:1px solid #ff6000;
+    color:#ff6000;
+}
+
+.pages1{
+    width:100%;
+    height:30px;
+    text-align: right;
+
+}
+.pages1 div{
+    padding-right:30px;
+}
+.pages1 .current,.pages1 a {
+    text-decoration: none;
+    border:1px solid #5FA623;
+    margin:0 2px;
+    padding:2px 6px;
+
+}
+.pages1 .current,.pages1 a:hover{
+    background:#7AB63F;
+    color:#fff;
+}
+

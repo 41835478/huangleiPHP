@@ -1,0 +1,95 @@
+[ 2017-06-30T14:33:08+08:00 ] ::1 /shop/index.php/Ad/Ad/lst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000876s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000693s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000794s ]
+SQL: SHOW COLUMNS FROM `sh_ad_pos` [ RunTime:0.0055s ]
+SQL: SELECT * FROM `sh_ad_pos`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sh_ad` [ RunTime:0.0060s ]
+SQL: SELECT a.*,b.ad_pos_name,b.ad_pos_width,b.ad_pos_height FROM sh_ad a left join sh_ad_pos b on a.ad_pos_id = b.id  WHERE ( 1 )  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000181s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000281s ]
+NOTIC: [8] Undefined index: api F:\wamp\www\shop\Application\Runtime\Cache\Ad\dafde1406a6618d8bf094ff22966962d.php 第 41 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' F:\wamp\www\shop\Application\Runtime\Cache\Ad\dafde1406a6618d8bf094ff22966962d.php 第 73 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' F:\wamp\www\shop\Application\Runtime\Cache\Ad\dafde1406a6618d8bf094ff22966962d.php 第 87 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' F:\wamp\www\shop\Application\Runtime\Cache\Ad\dafde1406a6618d8bf094ff22966962d.php 第 93 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' F:\wamp\www\shop\Application\Runtime\Cache\Ad\dafde1406a6618d8bf094ff22966962d.php 第 73 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' F:\wamp\www\shop\Application\Runtime\Cache\Ad\dafde1406a6618d8bf094ff22966962d.php 第 87 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' F:\wamp\www\shop\Application\Runtime\Cache\Ad\dafde1406a6618d8bf094ff22966962d.php 第 93 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' F:\wamp\www\shop\Application\Runtime\Cache\Ad\dafde1406a6618d8bf094ff22966962d.php 第 73 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' F:\wamp\www\shop\Application\Runtime\Cache\Ad\dafde1406a6618d8bf094ff22966962d.php 第 87 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' F:\wamp\www\shop\Application\Runtime\Cache\Ad\dafde1406a6618d8bf094ff22966962d.php 第 93 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.100165s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.100267s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000567s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001038s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001756s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001032s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001171s ]
+
+[ 2017-06-30T14:33:09+08:00 ] ::1 /shop/index.php/Ad/AdPos/lst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000461s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000848s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000983s ]
+SQL: SHOW COLUMNS FROM `sh_ad_pos` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `sh_ad_pos`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000137s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000243s ]
+NOTIC: [8] Undefined variable: recData F:\wamp\www\shop\Application\Runtime\Cache\Ad\69dc2859eef782e06b33f3cbde253ea6.php 第 34 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' F:\wamp\www\shop\Application\Runtime\Cache\Ad\69dc2859eef782e06b33f3cbde253ea6.php 第 62 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.073398s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.073497s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000493s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000793s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001421s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000917s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001070s ]
+
+[ 2017-06-30T14:33:24+08:00 ] ::1 /shop/index.php/Ad/Ad/lst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000431s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001291s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001440s ]
+SQL: SHOW COLUMNS FROM `sh_ad_pos` [ RunTime:0.0183s ]
+SQL: SELECT * FROM `sh_ad_pos`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sh_ad` [ RunTime:0.0061s ]
+SQL: SELECT a.*,b.ad_pos_name,b.ad_pos_width,b.ad_pos_height FROM sh_ad a left join sh_ad_pos b on a.ad_pos_id = b.id  WHERE ( 1 )  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000176s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000288s ]
+NOTIC: [8] Undefined index: api F:\wamp\www\shop\Application\Runtime\Cache\Ad\dafde1406a6618d8bf094ff22966962d.php 第 41 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' F:\wamp\www\shop\Application\Runtime\Cache\Ad\dafde1406a6618d8bf094ff22966962d.php 第 73 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' F:\wamp\www\shop\Application\Runtime\Cache\Ad\dafde1406a6618d8bf094ff22966962d.php 第 87 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' F:\wamp\www\shop\Application\Runtime\Cache\Ad\dafde1406a6618d8bf094ff22966962d.php 第 93 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' F:\wamp\www\shop\Application\Runtime\Cache\Ad\dafde1406a6618d8bf094ff22966962d.php 第 73 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' F:\wamp\www\shop\Application\Runtime\Cache\Ad\dafde1406a6618d8bf094ff22966962d.php 第 87 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' F:\wamp\www\shop\Application\Runtime\Cache\Ad\dafde1406a6618d8bf094ff22966962d.php 第 93 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' F:\wamp\www\shop\Application\Runtime\Cache\Ad\dafde1406a6618d8bf094ff22966962d.php 第 73 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' F:\wamp\www\shop\Application\Runtime\Cache\Ad\dafde1406a6618d8bf094ff22966962d.php 第 87 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' F:\wamp\www\shop\Application\Runtime\Cache\Ad\dafde1406a6618d8bf094ff22966962d.php 第 93 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011710s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011819s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000548s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001030s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001724s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001093s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001207s ]
+

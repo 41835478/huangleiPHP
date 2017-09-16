@@ -1,0 +1,19 @@
+[ 2017-07-07T12:48:14+08:00 ] ::1 /shop/index.php/Trade/Trade/getOrderData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000491s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000784s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000881s ]
+SQL: SHOW COLUMNS FROM `sh_orders` [ RunTime:0.0048s ]
+SQL: select month(a.time) month from sh_orders a where a.status != '待付款' group by a.ordersn [ RunTime:0.0006s ]
+NOTIC: [8] Undefined offset: 1 F:\wamp\www\shop\Application\Trade\Controller\TradeController.class.php 第 45 行.
+NOTIC: [8] Undefined offset: 2 F:\wamp\www\shop\Application\Trade\Controller\TradeController.class.php 第 45 行.
+NOTIC: [8] Undefined offset: 3 F:\wamp\www\shop\Application\Trade\Controller\TradeController.class.php 第 45 行.
+NOTIC: [8] Undefined offset: 7 F:\wamp\www\shop\Application\Trade\Controller\TradeController.class.php 第 45 行.
+NOTIC: [8] Undefined offset: 8 F:\wamp\www\shop\Application\Trade\Controller\TradeController.class.php 第 45 行.
+NOTIC: [8] Undefined offset: 9 F:\wamp\www\shop\Application\Trade\Controller\TradeController.class.php 第 45 行.
+NOTIC: [8] Undefined offset: 10 F:\wamp\www\shop\Application\Trade\Controller\TradeController.class.php 第 45 行.
+NOTIC: [8] Undefined offset: 11 F:\wamp\www\shop\Application\Trade\Controller\TradeController.class.php 第 45 行.
+NOTIC: [8] Undefined offset: 12 F:\wamp\www\shop\Application\Trade\Controller\TradeController.class.php 第 45 行.
+

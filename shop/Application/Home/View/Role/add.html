@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+        <link href="__PUBLIC__/assets/css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="__PUBLIC__/css/style.css"/>       
+        <link href="__PUBLIC__/assets/css/codemirror.css" rel="stylesheet">
+        <link rel="stylesheet" href="__PUBLIC__/assets/css/ace.min.css" />
+        <link rel="stylesheet" href="__PUBLIC__/font/css/font-awesome.min.css" />
+        <!--[if lte IE 8]>
+		  <link rel="stylesheet" href="__PUBLIC__/assets/css/ace-ie.min.css" />
+		<![endif]-->
+		<script src="__PUBLIC__/js/jquery-1.9.1.min.js"></script>
+        <script src="__PUBLIC__/assets/js/bootstrap.min.js"></script>
+		<script src="__PUBLIC__/assets/js/typeahead-bs2.min.js"></script>           	
+		<script src="__PUBLIC__/assets/js/jquery.dataTables.min.js"></script>
+		<script src="__PUBLIC__/assets/js/jquery.dataTables.bootstrap.js"></script>
+        <script src="__PUBLIC__/assets/layer/layer.js" type="text/javascript" ></script>
+        <script src="__PUBLIC__/assets/laydate/laydate.js" type="text/javascript"></script>
+        <script src="__PUBLIC__/js/dragDivResize.js" type="text/javascript"></script>
+<title>添加角色</title>
+</head>
+
+<body>
+<div class="Competence_add_style clearfix">
+    <form id="form1">
+  <div class="left_Competence_add">
+   <div class="title_name">添加角色</div>
+    <div class="Competence_add">
+     <div class="form-group"><label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 角色名称 </label>
+       <div class="col-sm-9"><input type="text" id="form-field-1" placeholder=""  name="role_name" class="col-xs-10 col-sm-5"></div>
+	</div>
+     <div class="form-group"><label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 角色描述 </label>
+      <div class="col-sm-9"><textarea name="content" class="form-control" id="form_textarea" placeholder="" onkeyup="checkLength(this);"></textarea><span class="wordage">剩余字数：<span id="sy" style="color:Red;">200</span>字</span></div>
+	</div>
+
+   <!--按钮操作-->
+   <div class="Button_operation">
+				<button class="btn btn-primary radius" type="button" id="submit"><i class="fa fa-save "></i> 添加</button>
+			</div>
+   </div>
+   </div>
+   <!--权限分配-->
+   <div class="Assign_style">
+      <div class="title_name">权限分配</div>
+
+      <div class="Select_Competence">
+      <?php foreach($data as $k => $v): ?>
+          <dl class="permission-list">
+            <dt><label class="middle"><input name="role_pri_id[]"  value="<?php echo $v['id'];?>" class="ace chk11" type="checkbox" id="id-disable-check"><span class="lbl"><?php echo $v['pri_name']; ?></span></label></dt>
+            <dd>
+                <?php foreach($v['children'] as $k1 => $v1):?>
+            <dl class="cl permission-list2">
+                <dt><label class="middle"><input type="checkbox" value="<?php echo $v1['id']; ?>" class="ace"  name="role_pri_id[]" id="id-disable-check"><span class="lbl"><?php echo $v1['pri_name']; ?></span></label></dt>
+                <dd>
+                    <?php foreach($v1['children'] as $k2 => $v2):?>
+                    <label class="middle"><input type="checkbox" value="<?php echo $v2['id'];?>" class="ace" name="role_pri_id[]" id="user-Character-0-0-0"><span class="lbl"><?php echo $v2['pri_name'];?></span></label>
+                    <?php endforeach; ?>
+                </dd>
+            </dl>
+            <?php endforeach; ?>
+            </dd>
+            </dl>
+        <?php endforeach; ?>
+      </div>
+       </div>
+        </form>
+
+  </div>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+//初始化宽度、高度  
+ $(".left_Competence_add,.Competence_add_style").height($(window).height()).val();; 
+ $(".Assign_style").width($(window).width()-500).height($(window).height()).val();
+ $(".Select_Competence").width($(window).width()-500).height($(window).height()-40).val();
+  //当文档窗口发生改变时 触发  
+    $(window).resize(function(){
+	
+	$(".Assign_style").width($(window).width()-500).height($(window).height()).val();
+	$(".Select_Competence").width($(window).width()-500).height($(window).height()-40).val();
+	$(".left_Competence_add,.Competence_add_style").height($(window).height()).val();;
+	});
+/*字数限制*/
+function checkLength(which) {
+	var maxChars = 200; //
+	if(which.value.length > maxChars){
+	   layer.open({
+	   icon:2,
+	   title:'提示框',
+	   content:'您出入的字数超多限制!',	
+    });
+		// 超过限制的字数了就将 文本框中的内容按规定的字数 截取
+		which.value = which.value.substring(0,maxChars);
+		return false;
+	}else{
+		var curr = maxChars - which.value.length; //250 减去 当前输入的
+		document.getElementById("sy").innerHTML = curr.toString();
+		return true;
+	}
+};
+/*按钮选择*/
+$(function(){
+	$(".permission-list dt input:checkbox").click(function(){
+		$(this).closest("dl").find("dd input:checkbox").prop("checked",$(this).prop("checked"));
+	});
+
+	$(".permission-list2 dd input:checkbox").click(function(){
+
+		var l =$(this).parent().parent().find("input:checked").length;
+		var l2=$(this).parents(".permission-list").find(".permission-list2 dd").find("input:checked").length;
+		if($(this).prop("checked")){
+			$(this).closest("dl").find("dt input:checkbox").prop("checked",true);
+			$(this).parents(".permission-list").find("dt").first().find("input:checkbox").prop("checked",true);
+		}
+		else{
+			if(l==0){
+				$(this).closest("dl").find("dt input:checkbox").prop("checked",false);
+			}
+			if(l2==0){
+				$(this).parents(".permission-list").find("dt").first().find("input:checkbox").prop("checked",false);
+
+			}
+		}
+		
+	});
+
+    $('.permission-list2 dt input:checkbox').click(function(){
+        var chk = $(this).parents(".permission-list").find('dt').first().find("input:checkbox");
+        chk.prop('checked',true);
+        var l = $(this).parents('.permission-list').find("dd input:checked").length;
+        if(l == 0){
+            chk.prop('checked',false);
+        }
+    });
+
+
+});
+
+$('#submit').click(function (){
+
+    var num = $('input:checkbox:checked').length;
+    var inp = $('input:text').val();
+    var txt = $('#form_textarea').val();
+
+    if($.trim(inp).length == 0){
+        layer.msg('请填写角色名称！',{icon:2,time:1000});
+        return false;
+    }
+
+    if(num == 0){
+        layer.msg('请分配权限！',{icon:2,time:1000});
+        return false;
+    }
+
+    if($.trim(txt).length == 0){
+        layer.msg('请填写角色描述！',{icon:2,time:1000});
+        return false;
+    }
+
+
+    $.ajax({
+        url : "__CONTROLLER__/add",
+        type : 'post',
+        data : $('#form1').serialize(),
+        success : function (data){
+            if(data == 1){
+                $('#submit').attr('disabled',true);
+                layer.msg('添加成功！',{icon:1,time:1000});
+                setTimeout(function (){
+                    location.href="__CONTROLLER__/lst";
+                },1000);
+            }else{
+                layer.alert('添加失败，请重试！',{
+                    title: '提示框',
+                    icon:2,
+                });
+            }
+        },
+    });
+
+
+
+
+
+});
+
+
+</script>

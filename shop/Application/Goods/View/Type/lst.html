@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+        <link href="__PUBLIC__/assets/css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="__PUBLIC__/css/style.css"/>       
+        <link href="__PUBLIC__/assets/css/codemirror.css" rel="stylesheet">
+        <link rel="stylesheet" href="__PUBLIC__/assets/css/ace.min.css" />
+        <link rel="stylesheet" href="__PUBLIC__/font/css/font-awesome.min.css" />
+        <!--[if lte IE 8]>
+		  <link rel="stylesheet" href="__PUBLIC__/assets/css/ace-ie.min.css" />
+		<![endif]-->
+		<script src="__PUBLIC__/js/jquery-1.9.1.min.js"></script>
+        <script src="__PUBLIC__/assets/js/bootstrap.min.js"></script>
+		<script src="__PUBLIC__/assets/js/typeahead-bs2.min.js"></script>           	
+		<script src="__PUBLIC__/assets/js/jquery.dataTables.min.js"></script>
+		<script src="__PUBLIC__/assets/js/jquery.dataTables.bootstrap.js"></script>
+        <script src="__PUBLIC__/assets/layer/layer.js" type="text/javascript" ></script>          
+        <script src="__PUBLIC__/assets/laydate/laydate.js" type="text/javascript"></script>
+<title>管理角色</title>
+</head>
+
+<body>
+ <div class="margin clearfix">
+   <div class="border clearfix">
+       <span class="l_f">
+        <a href="__CONTROLLER__/add" id="Competence_add" class="btn btn-warning" title="添加类型"><i class="fa fa-plus"></i> 添加类型</a>
+        <a href="javascript:ovid()" class="btn btn-danger" id="pl"><i class="fa fa-trash"></i> 批量删除</a>
+       </span>
+       <span class="r_f">共：<b><?php echo count($data);?></b>个类型</span>
+     </div>
+     <div class="compete_list">
+         <form id="form1">
+       <table id="sample-table-1" class="table table-striped table-bordered table-hover">
+		 <thead>
+			<tr>
+			  <th class="center"><label><input type="checkbox" onclick="t()" class="ace" id="chk1"><span class="lbl"></span></label></th>
+                <th>id</th>
+			  <th>类型名称</th>
+
+			  <th class="hidden-480">备注</th>
+			  <th class="hidden-480">操作</th>
+             </tr>
+		    </thead>
+             <tbody>
+             <?php foreach($data as $k => $v):?>
+			  <tr>
+
+				<td class="center">
+
+                    <label><input type="checkbox" class="ace chk2" name="dels[]" value="<?php echo $v['id'];?>"><span class="lbl"></span></label>
+
+                </td>
+
+                  <td><?php echo $v['id']?></td>
+
+				<td><?php echo $v['type_name']?></td>
+                  <td><?php echo $v['type_desc'];?></td>
+				<td>
+
+                    <a title="属性管理" href="{:U('Attribute/lst',array('id'=>$v['id']))}"  id="Competence_save" class="btn btn-xs btn-info" >属性管理</a>
+                    <a title="修改类型" href="__CONTROLLER__/save/id/<?php echo $v['id']; ?>"  id="Competence_save" class="btn btn-xs btn-info" ><i class="fa fa-edit bigger-120"></i></a>
+                    <a title="删除类型" href="javascript:void(0);" onclick="role_del(this,'<?php echo $v[id];?>')" class="btn btn-xs btn-warning" ><i class="fa fa-trash  bigger-120"></i></a>
+
+                </td>
+			   </tr>
+                <?php endforeach; ?>
+		      </tbody>
+	        </table>
+             </form>
+     </div>
+ </div>
+
+</body>
+</html>
+<script type="text/javascript">
+//面包屑返回值
+var index = parent.layer.getFrameIndex(window.name);
+parent.layer.iframeAuto(index);
+$('.Order_form ,#Competence_add,#Competence_save').on('click', function(){
+	var cname = $(this).attr("title");
+	var cnames = parent.$('.Current_page').html();
+	var herf = parent.$("#iframe").attr("src");
+    parent.$('#parentIframe span').html(cname);
+	parent.$('#parentIframe').css("display","inline-block");
+    parent.$('.Current_page').attr("name",herf).css({"color":"#4c8fbd","cursor":"pointer"});
+	//parent.$('.Current_page').html("<a href='javascript:void(0)' name="+herf+">" + cnames + "</a>");
+    parent.layer.close(index);
+	
+});
+function t(){
+    var chk1 = document.getElementById('chk1');
+    var chk2 = document.getElementsByClassName('chk2');
+    if(chk1.checked == true){
+        for(var i = 0; i < chk2.length; i++){
+            chk2[i].checked = true;
+        }
+    }else{
+        for(var i = 0; i < chk2.length; i++){
+            chk2[i].checked = false;
+        }
+    }
+}
+
+//批量删除
+$('#pl').click(function (){
+    layer.confirm('确认要批量删除吗？',function(index) {
+        var arr = new Array();
+        var chked = $("input:checkbox:checked");
+        chked.each(function () {
+            var id = $(this).val();
+            arr.push(id);
+        });
+        $.ajax({
+            type: 'post',
+            url: '__CONTROLLER__/plDel',
+            data: {
+                dels: arr,
+            },
+            success: function (data) {
+                if (data == 1) {
+                    chked.each(function(){
+                        $(this).parent().parent().parent('tr').remove();
+                    });
+                    layer.msg('批量删除成功!', {icon: 1, time: 1000});
+                } else {
+                    layer.msg('批量删除失败，请重试!', {icon: 2, time: 1000});
+                }
+            }
+        });
+    });
+
+});
+
+
+/*角色-单个删除*/
+function role_del(obj,id){
+    layer.confirm('确认要删除吗？',function(index){
+
+        $.ajax({
+            type : 'post',
+            url : '__CONTROLLER__/delete/id/'+id,
+            success : function(data){
+
+                if(data == 1){
+                    $(obj).parents("tr").remove();
+                    layer.msg('已删除!',{icon:1,time:1000});
+                }else{
+                    layer.alert('删除失败，请重试！',{
+                        title: '提示框',
+                        icon:2,
+                    });
+                }
+
+            }
+        });
+
+    });
+}
+</script>

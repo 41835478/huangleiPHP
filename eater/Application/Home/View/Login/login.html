@@ -1,0 +1,81 @@
+<script type="text/javascript" src="__PUBLIC__/layer/layer.js"></script>
+
+<!--Begin Login Begin-->
+<div class="log_bg">	
+    <div class="top">
+        <div class="logo"><a href="{:U('Index/index')}"><img src="__PUBLIC__/images/logo.png" /></a></div>
+    </div>
+	<div class="login">
+    	<div class="log_img"><img src="__PUBLIC__/images/l_img.png" width="611" height="425" /></div>
+		<div class="log_c">
+        	<form id="form1">
+            <table border="0" style="width:370px; font-size:14px; margin-top:30px;" cellspacing="0" cellpadding="0">
+              <tr height="50" valign="top">
+              	<td width="55">&nbsp;</td>
+                <td>
+                	<span class="fl" style="font-size:24px;">登录</span>
+                    <span class="fr">还没有商城账号，<a href="__CONTROLLER__/register" style="color:#ff4e00;">立即注册</a></span>
+                </td>
+              </tr>
+                <tr height="25">
+                    <td></td>
+                    <td align="left" style="color:red;" id="message1"></td>
+                </tr>
+              <tr height="70">
+                <td>手机号</td>
+                <td><input type="text" value="" name="username" class="l_user" /></td>
+              </tr>
+              <tr height="70">
+                <td>密&nbsp; &nbsp; 码</td>
+                <td><input type="password" value="" name="password" class="l_pwd" /></td>
+              </tr>
+              <tr>
+              	<td>&nbsp;</td>
+                <td style="font-size:12px; padding-top:20px;">
+                	<span style="font-family:'宋体';" class="fl">
+                    	<label class="r_rad"><input type="checkbox" name="save" value="1" /></label><label class="r_txt">一周内免登陆</label>
+                    </span>
+                    <span class="fr"><a href="__CONTROLLER__/forget_password" style="color:#ff4e00;">忘记密码</a></span>
+                </td>
+              </tr>
+              <tr height="60">
+              	<td>&nbsp;</td>
+                <td><input type="submit" value="登录" id="submit" class="log_btn" /></td>
+              </tr>
+            </table>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    $('#submit').click(function(){
+        $('#message1').html('');
+        $.ajax({
+            type     : 'post',
+            url      : '__CONTROLLER__/Login',
+            data     : $('#form1').serialize(),
+            async:false,
+            dataType : 'json',
+            success  : function (response){
+
+                if(response.status){
+
+                    $('#submit').attr('disabled',true);
+                    $('#submit').val(response.result);
+                    setTimeout(function(){
+
+                        location.href="<?php echo $_COOKIE['refer'];?>";
+                        $('#submit').attr('disabled','false');
+                        $('#submit').val('登录');
+                    },1000);
+
+                }else{
+                    $('#message1').html(response.result);
+                    //layer.alert(response.result,{icon:2,title : '提示',time:2000});
+                }
+
+            }
+        });
+        return false;
+    });
+</script>

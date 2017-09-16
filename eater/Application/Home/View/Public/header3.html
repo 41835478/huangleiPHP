@@ -1,0 +1,55 @@
+<!--End Header End-->
+<!--Begin Menu Begin-->
+
+<div class="menu_bg">
+    <div class="menu">
+        <!--Begin 商品分类详情 Begin-->
+        <div class="nav">
+            <div class="nav_t">全部商品分类</div>
+                <!-- =======  页面中不需要打开分类菜单的数组   ======== -->
+            <?php $catArr = array('item','store','showPayCar','confirmOrder','pay','search','store_list','pay_success');?>
+            <div class="leftNav <?php echo in_array(ACTION_NAME,$catArr) ? 'none' : ''; ?>">
+                <ul>
+                    <?php foreach($catData as $k => $v): ?>
+                    <li>
+                        <?php $url = U('Index/search',array('cat_id'=>$v['id']));?>
+                        <div class="fj" onclick="submit_search('<?php echo str_replace('/',',',$v[cat_name]);?>','商品')">
+                            <span class="n_img"><span></span><img src="__PUBLIC__/images/nav1.png" /></span>
+                            <span class="fl"><?php echo $v['cat_name'];?></span>
+                        </div>
+                        <div class="zj" style="top:-<?php echo $k*40;?>px;">
+                            <div class="zj_l">
+                                <?php foreach($v['children'] as $k1 => $v1): ?>
+                                <div class="zj_l_c">
+                                    <h2 onclick="submit_search('<?php echo str_replace('/',',',$v1[cat_name]);?>','商品')"><?php echo $v1['cat_name'];?></h2>
+                                    <?php foreach($v1['children'] as $k2 => $v2): ?>
+                                    <a href="javascript:void(0);" onclick="submit_search('<?php echo str_replace('/',',',$v2[cat_name]);?>','商品')"><?php echo $v2['cat_name'];?></a>|
+                                    <?php endforeach; ?>
+                                </div>
+                                <?php endforeach; ?>
+                            </div>
+                            <div class="zj_r">
+                                <?php foreach($v['recGoods'] as $k1 => $v1): ?>
+                                <a href="__CONTROLLER__/item/id/<?php echo $v1['id'];?>" style="width:210px;height:210px;"><img src="<?php echo IMG_URL.$v1['goods_logo_url']?>" style="width:210px;height:210px;"/></a>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                    </li>
+                    <?php endforeach;?>
+                </ul>
+            </div>
+        </div>
+        <!--End 商品分类详情 End-->
+        <ul class="menu_r">
+            <li><a href="Index.html">首页</a></li>
+            <li><a href="Food.html">美食</a></li>
+            <li><a href="Fresh.html">生鲜</a></li>
+            <li><a href="HomeDecoration.html">家居</a></li>
+            <li><a href="SuitDress.html">女装</a></li>
+            <li><a href="MakeUp.html">美妆</a></li>
+            <li><a href="Digital.html">数码</a></li>
+            <li><a href="GroupBuying.html">团购</a></li>
+        </ul>
+
+    </div>
+</div>

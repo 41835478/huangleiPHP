@@ -1,0 +1,209 @@
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/css/order.css" />
+<script type="text/javascript" src="__PUBLIC__/layer/layer.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/n_nav.js"></script>
+
+<script type="text/javascript" src="__PUBLIC__/js/num.js">
+    var jq = jQuery.noConflict();
+</script>
+<script src="__PUBLIC__/js/area.js" type="text/javascript"></script>
+<script type="text/javascript" src="__PUBLIC__/js/shade.js"></script>
+<style>
+    .a_btn{
+        height: 35px;
+        line-height: 35px;
+        padding: 0 11px;
+        background: #02bafa;
+        border: 1px #26bbdb solid;
+        border-radius: 3px;
+        color:#fff;
+        /*color: #fff;*/
+        display: inline-block;
+        text-decoration: none;
+        font-size: 15px;
+        outline: none;
+    }
+    .b_btn{
+        height: 35px;
+        line-height: 35px;
+        padding: 0 11px;
+        background:#ff8208;
+        border: 1px solid #ff8208;
+        border-radius: 3px;
+        color:#fff;
+        /*color: #fff;*/
+        display: inline-block;
+        text-decoration: none;
+        font-size: 15px;
+        outline: none;
+        width:70px;
+        text-align: center;
+    }
+    .b_btn:hover{
+        background: #FF9900;
+        color:#fff;
+    }
+    .a_btn:hover{
+        background: #2e8ded;
+        color:#fff;
+    }
+</style>
+<!--End Menu End-->
+<div class="i_bg">
+    <div class="content mar_20">
+        <img src="__PUBLIC__/images/img3.jpg" />
+    </div>
+
+    <!--Begin 第三步：提交订单 Begin -->
+    <div class="content mar_20">
+
+        <!--Begin 银行卡支付 Begin -->
+        <div class="warning">
+            <table border="0" style="width:1000px; " cellspacing="0" cellpadding="0">
+                <tr height="40">
+                    <td style="font-size:18px;">
+                        <span style="width:100px;text-align:right;display: inline-block;">订单号 : </span> <font color="#ff4e00"><?php echo str_replace('o','&emsp;',$_GET['orderSn'])?></font>
+                    </td>
+                </tr>
+                <tr height="40">
+                    <td style="font-size:18px;">
+
+                        <div style="width:100px;height:50px;float: left;"><span style="width:100px;text-align:right;display: inline-block;">商品名称 :</span></div>
+                        <span style="display: inline-block;margin-left:6px;">
+                            <?php foreach($data as $k => $v): ?>
+                            <?php echo ($k+1).'、'.$v['goods_title'];?><br />
+                            <?php endforeach; ?>
+                        </span>
+
+                    </td>
+                </tr>
+
+                <tr height="40">
+                    <td style="font-size:18px;">
+                        <div style="width:100px;height:50px;float: left;"><span style="width:100px;text-align:right;display: inline-block;">收货地址 :</span></div>
+                        <span style="display: inline-block;margin-left:6px;">
+                        <?php echo $address['province'].$address['city'].$address['county'].$address['address'];?>&emsp;
+                        <?php echo $address['name'].'&emsp;'.$address['phone'];?><br />
+                        </span>
+                    </td>
+                </tr>
+                <tr height="40">
+                    <td style="font-size:18px;padding:0 0 20px 0; border-bottom:1px solid #b6b6b6;">
+                        <span style="width:100px;text-align:right;display: inline-block;">支付 : </span> <span style="font-weight: 700;color:#ff8208;font-size: 22px;"><?php echo $total_price;?></span> 元 &emsp;<a href="" style="font-size: 13px;">刷新</a>
+                    </td>
+                </tr>
+                <!--<tr><td>&nbsp;</td></tr>-->
+                <tr class="tr1" style=" <?php if($data[0]['pay_type'] == '余额支付'){ echo 'border:3px solid #85a1d4;';}else{echo 'border:3px dashed #ADD8E6;';}?>cursor:pointer;display: block;margin-top:20px;">
+                    <td style="padding:10px 0 10px 10px;">
+                        <input type="radio" name="pay_type" <?php if($data[0]['pay_type'] == '余额支付'){echo "checked='checked'";}?> value="余额支付">
+                            <span style="margin: 2px 0 0 0 ; position: relative">
+                                <img  src="__PUBLIC__/images/pay.png" style=" top: 2px;left: 5px; display: block;position: absolute">
+                            <span style="margin-left:35px;margin-top: 3px ">账户余额 <?php echo $member['money'];?> 元</span>
+                        </span>
+                    </td>
+                </tr>
+                <tr class="tr1" style="<?php if($data[0]['pay_type'] == '货到付款'){ echo 'border:3px solid #85a1d4;';}else{echo 'border:3px dashed #ADD8E6;';}?>cursor:pointer;display: block;margin:15px 0;">
+                    <td style="padding:10px 0 10px 10px;">
+
+                        <input type="radio" name="pay_type" value="货到付款" <?php if($data[0]['pay_type'] == '货到付款'){echo "checked='checked'";}?>>
+                            <span style="margin: 2px 0 0 0 ; position: relative">
+                                <img  src="__PUBLIC__/images/pay.png" style=" top: 2px;left: 5px; display: block;position: absolute">
+                            <span style="margin-left:35px;margin-top: 3px ">货到付款</span>
+
+                        </span>
+                    </td>
+                </tr>
+                <tr style="display: block;margin:15px 0;">
+                    <td style="padding:20px 0 30px 0; font-family:'宋体';">
+                        <span style="display:block;height:35px;color:red;" id="message1"></span>
+                        <span style="display: inline-block;width:80px;text-align: right;height:35px;">手机号：</span><span style="font-weight: bold;font-size: 18px;"><?php echo $member['username'];?></span><br>
+                        <span style="display: inline-block;width:80px;text-align: right;height:35px;">验证码：</span><input type="text" name="code" style="height:35px;width:80px;margin-right:6px;border: 1px solid #d9d9d9;"><a href="javascript:void(0);" onclick="get_code()" id="get_code1" class="a_btn">获取验证码</a>
+                        <span style="display: block;width:80px;height:35px;margin-left:30px;margin-top:10px;"><a href="javascript:void(0);" class="b_btn" onclick="payOrder(this);">确认</a></span>
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+        <!--Begin 银行卡支付 Begin -->
+
+    </div>
+    <!--End 第三步：提交订单 End-->
+
+    <script>
+
+        $('.tr1').click(function(){
+            $(this).find(":input[type='radio']").prop("checked",true);
+            $(this).css('border-style','solid').css('border-color','#85a1d4');
+            $('.tr1').not(this).css('border-style','dashed').css('border-color','#ADD8E6');
+        });
+
+        /* 获取短信验证码 */
+        function get_code(){
+
+            $('#message1').html(' ');
+            //var phone = "<?php echo $member['username'];?>";
+            $.ajax({
+                type : 'post',
+                url : "{:U('Login/get_code',array('username'=>$member['username']))}",
+                dataType : 'json',
+                success : function (response){
+
+                    if(response.status){
+
+                        $('#message1').html(response.result);
+
+                        var time = 60;
+                        $('#get_code1').css("background","#AAAAAA").attr("onclick","").html(time+"秒后，重新发送");
+
+                        var id = setInterval(function(){
+
+                            time--;
+                            $('#get_code1').html(time+"秒后，重新发送");
+                            if(time == 0){
+                                clearInterval(id);
+                                $('#get_code1').attr("onclick","get_code()").css('background','#02bafa').html("发送验证码");
+                            }
+                        },1000);
+
+                    }else{
+                        $('#message1').html(response.result);
+                    }
+                }
+            });
+            return false;
+        }
+
+        /* 提交 支付*/
+        function payOrder(obj){
+
+            $(obj).attr('onclick','').css('background','#ccc');
+            $(obj).html('支付中..');
+            $.ajax({
+                type : 'post',
+                url : '__CONTROLLER__/payOrder',
+                data : {
+                    orderSn : "<?php echo $_GET['orderSn'];?>",
+                    pay_type : $("input[name='pay_type']:checked").val(),
+                    code : $("input[name='code']").val(),
+                },
+                success : function(response){
+
+                    // 如果订单超时，或不存在
+                    if(response.status == 'error'){
+                        layer.alert(response.result,{icon:5,title:'友情提示',closeBtn: 0 },function(){location.href="/eater"});
+                    }
+
+                    if(response.status){
+                        var url = "__APP__"+"/Home/Pay/pay_success/ordersn/"+response.ordersn;
+                        location.replace(url);
+                    }else{
+                        $(obj).css('background','#ff8208').html('确认');
+                        layer.alert(response.result,{icon:2,title:'错误提示'});
+                    }
+
+                }
+            });
+
+
+        }
+    </script>

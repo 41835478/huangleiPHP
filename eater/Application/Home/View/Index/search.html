@@ -1,0 +1,262 @@
+<!--[if IE 6]>
+<script src="__PUBLIC__/js/iepng.js" type="text/javascript"></script>
+    <script type="text/javascript">
+       EvPNG.fix('div, ul, img, li, input, a');
+    </script>
+<![endif]-->
+
+<script type="text/javascript" src="__PUBLIC__/js/n_nav.js"></script>
+<style>
+    .pages .current {
+        display: inline-block;
+        height:36px;
+        line-height: 36px;
+        text-align: center;
+        font-size: 16px;
+        color:#FFF;
+        background-color: #ff4e00;
+        border: 1px solid #ff4e00;
+        padding:0 12px;
+        margin:0 4px;
+        border-radius:2px;
+        overflow: hidden;
+
+    }
+
+
+</style>
+
+<!--End Menu End-->
+<div class="i_bg">
+	<div class="postion" style="height:32px;">
+        <?php if(isset($_GET['brand_id']) || isset($_GET['cat_id']) || isset($_GET['type_id'])){ ?>
+            <span class="fl">筛选：</span>
+
+            <?php if(isset($_GET['brand_id']) && $_GET['brand_id'] !=""){?>
+            <span class="n_ch">
+
+                <span class="fl">品牌：<font><?php echo $bid_bname[$_GET['brand_id']];?></font></span>
+                <a href="<?php echo U('Index/search',getParameter('brand_id','',false));?>"><img src="__PUBLIC__/images/s_close.gif" /></a>
+            </span>
+            <?php } ?>
+
+            <?php if(isset($_GET['type_id']) && $_GET['type_id'] !=""){?>
+            <span class="n_ch">
+                <span class="fl">类型：<font><?php echo $tid_tname[$_GET['type_id']];?></font></span>
+                <a href="<?php echo U('Index/search',getParameter('type_id','',false));?>"><img src="__PUBLIC__/images/s_close.gif" /></a>
+            </span>
+            <?php }?>
+
+            <?php if(isset($_GET['cat_id']) && $_GET['cat_id'] !=""){?>
+            <span class="n_ch">
+                <span class="fl">分类：<font><?php echo $cid_cname[$_GET['cat_id']];?></font></span>
+                <a href="<?php echo U('Index/search',getParameter('cat_id','',false)); ?>"><img src="__PUBLIC__/images/s_close.gif" /></a>
+            </span>
+            <?php }?>
+        &nbsp;<a href="{:U('Index/search',array('content'=>$_GET['content'],'gid'=>$_GET['gid']))}">清除筛选</a>
+        <?php }?>
+    </div>
+    <!--Begin 筛选条件 Begin-->
+    <div class="content mar_10">
+    	<table border="0" class="choice" style="width:100%; font-family:'宋体'; margin:0 auto;" cellspacing="0" cellpadding="0">
+          <tr valign="top">
+            <td width="70">&nbsp; 品牌：</td>
+            <td class="td_a">
+                <!--<a href="{:U('Index/search',array('type_id'=>$_GET['type_id'],'cat_id'=>$_GET['cat_id'],'content'=>$_GET['content'],'gid'=>$_GET['gid']))}" <?php echo !isset($_GET['brand_id'])||$_GET['brand_id'] =="" ? 'class="now"' : '';?>>全部</a>-->
+                <?php foreach($brand as $k => $v): ?>
+                    <a href="{:U('Index/search',getParameter('brand_id',$v[id]))}" <?php echo $_GET['brand_id'] == $v['id'] ? 'class="now"' : '';?>><?php echo $v['brand_name'];?></a>
+                <?php endforeach; ?>
+            </td>
+          </tr>
+
+          <tr>
+            <td>&nbsp; 类型：</td>
+            <td class="td_a">
+                <!--<a href="{:U('Index/search',array('brand_id'=>$_GET['brand_id'],'content'=>$_GET['content'],'gid'=>$_GET['gid'],'cat_id'=>$_GET['cat_id']))}" <?php echo !isset($_GET['type_id'])||$_GET['type_id'] =="" ? 'class="now"' : '';?>>全部</a>-->
+                <?php foreach($type as $k => $v): ?>
+                    <a href="{:U('Index/search',getParameter('type_id',$v[id]))}" <?php echo $_GET['type_id'] == $v['id'] ? 'class="now"' : '';?>><?php echo $v['type_name'];?></a>
+                <?php endforeach; ?>
+            </td>
+          </tr>                                          
+          <tr>
+            <td>&nbsp; 分类：</td>
+            <td class="td_a">
+                <!--<a href="{:U('Index/search',array('type_id'=>$_GET['type_id'],'brand_id'=>$_GET['brand_id'],'content'=>$_GET['content'],'gid'=>$_GET['gid']))}" <?php echo !isset($_GET['cat_id'])||$_GET['cat_id'] =="" ? 'class="now"' : '';?>>全部</a>-->
+                <?php foreach($category as $k => $v): ?>
+                    <a href="{:U('Index/search',getParameter('cat_id',$v[id]))}" <?php echo $_GET['cat_id'] == $v['id'] ? 'class="now"' : '';?>><?php echo $v['cat_name'];?></a>
+                <?php endforeach; ?>
+            </td>
+          </tr>                                                             
+        </table>                                                                                 
+    </div>
+    <!--End 筛选条件 End-->
+    
+    <div class="content mar_20">
+    	<div class="l_history">
+        	<div class="his_t">
+            	<span class="fl">浏览历史</span>
+            </div>
+        	<ul>
+
+                <?php if($record){ ?>
+                <?php foreach($record as $k => $v): ?>
+            	<li>
+                    <div class="img"><a href="__CONTROLLER__/item/id/<?php echo $v['id'];?>"><img src="<?php echo IMG_URL.$v['goods_logo_url'];?>" width="185" height="162" /></a></div>
+                	<div class="name"><a href="__CONTROLLER__/item/id/<?php echo $v['id'];?>"><?php echo $v['goods_jl_title'];?></a></div>
+                    <div class="price">
+                    	<font>￥<span><?php echo $v['goods_shop_price'];?></span></font>
+                    </div>
+                </li>
+                <?php endforeach; ?>
+                <?php }else{ ?>
+                <center>无浏览记录</center>
+                <?php }?>
+
+        	</ul>
+        </div>
+        <div class="l_list">
+        	<div class="list_t">
+            	<span class="fl list_or">
+                    <a href="{:U('Index/search',getParameter('order','',false))}" <?php echo !$_GET['order'] ? 'class="now"' : '';?>>全部</a>
+                    <a href="#" class="sales <?php echo in_array($_GET['order'],array('sales_low','sales_up')) ? 'now':'';?>" style="width:100px;">
+                    	<span class="fl">
+                            <?php
+                                  if($_GET['order'] == 'sales_low'){
+                                    echo '销量从低到高';
+                                  }elseif($_GET['order'] == 'sales_up'){
+                                    echo '销量从高到低';
+                                  }else{
+                                    echo '销量';
+                                  }
+                            ?>
+
+                        </span>
+                        <ul style="display: none">
+                            <?php $sales_low = U('Index/search',getParameter('order','sales_low'));?>
+                            <?php $sales_up = U('Index/search',getParameter('order','sales_up'));?>
+                            <li onclick="location.href='<?php echo $sales_low;?>'">销量从低到高</li>
+                            <li onclick="location.href='<?php echo $sales_up;?>'">销量从高到低</li>
+                        </ul>
+                    </a>
+
+                    <a href="#" class="price <?php echo in_array($_GET['order'],array('price_low','price_up')) ? 'now':'';?>" style="width:100px;">
+                    	<span class="fl">
+                            <?php
+                                  if($_GET['order'] == 'price_low'){
+                                    echo '价格从低到高';
+                                  }elseif($_GET['order'] == 'price_up'){
+                                    echo '价格从高到低';
+                                  }else{
+                                    echo '价格';
+                                  }
+                            ?>
+                        </span>
+                        <ul style="display: none">
+                            <?php $price_low = U('Index/search',getParameter('order','price_low'));?>
+                            <?php $price_up = U('Index/search',getParameter('order','price_up'));?>
+                            <li onclick="location.href='<?php echo $price_low;?>'">价格从低到高</li>
+                            <li onclick="location.href='<?php echo $price_up;?>'">价格从高到低</li>
+                        </ul>
+                    </a>
+
+                    <a href="{:U('Index/search',getParameter('order','new'))}" <?php echo $_GET['order']=='new' ? 'class="now"' : '';?>>新品</a>
+                </span>
+                <span class="fr">共发现<?php echo count($goods);?>件</span>
+            </div>
+            <div class="list_c">
+
+                <ul class="cate_list">
+
+
+                    <?php if(!count($goods)){?>
+                        <center style="font-weight: 700;font-size: 16px;">没有找到相关宝贝</center>
+                    <?php }else{?>
+                    <?php foreach($goods as $k => $v): ?>
+                	<li style="height:380px;">
+                    	<div class="img"><a href="__CONTROLLER__/item/id/<?php echo $v['id'];?>" target="_blank"><img src="<?php echo IMG_URL.$v['goods_logo_url'];?>" width="210" height="185" /></a></div>
+                        <div class="price">
+                            <font>￥<span><?php echo $v['goods_shop_price'];?></span><label style="display: block;float: right;color:#888;cursor: text;font-size: 13px;"><?php echo $v['sales'].'人付款';?></label></font>
+                        </div>
+                        <div class="name" style="height:60px;line-height: 20px;font-size: 12px;"><a href="__CONTROLLER__/item/id/<?php echo $v['id'];?>" target="_blank"><?php echo $v['goods_title'];?></a></div>
+                        <div style="height:25px;width:208px;font-size:14px;">  <a href="__CONTROLLER__/store/store_id/<?php echo $v['store_id'];?>" style="color:#888;text-decoration: underline" target="_blank"><?php echo $v['store_name'];?></a></div>
+                        <div class="carbg" style="margin-top:15px;">
+                            <a href="#" <?php echo strpos(','.$follow.',',','.$v['id'].',') !== false ? "style='background-image:url(__PUBLIC__/images/heart_h.png);'":'';?> class="ss heart"  onclick="ajaxFollow(this,'<?php echo $v[id];?>','<?php echo $_SESSION[eater_uid];?>','商品')">
+                            <?php if(strpos(','.$follow.',',','.$v['id'].',') !== false){ ?>
+                            取消
+                            <?php }else{ ?>
+                            收藏
+                            <?php }?>
+                            </a>
+                            <a href="__CONTROLLER__/item/id/<?php echo $v['id'];?>" class="j_car">加入购物车</a>
+                        </div>
+                    </li>
+                    <?php endforeach; ?>
+                    <?php }?>
+
+                </ul>
+                
+                <div class="pages">
+                    <?php echo $page;?>
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+    <script>
+
+
+        // ajax 关注该商品
+        function ajaxFollow(obj,value_id,user_id,type){
+
+            // 如果用户没有登录，跳转到登录页面
+            if(user_id == "" || user_id != '<?php echo $_SESSION[eater_uid]?>'){
+                window.location.href="{:U('Login/login')}";
+                return false;
+            }
+            $.ajax({
+                type : 'post',
+                url  : '__CONTROLLER__/ajaxFollow',
+                data : {
+                    value_id : value_id,
+                    user_id  : user_id,
+                    type : type,
+                },
+                success : function(response){
+                    if(response.status){
+
+                        if(type == '商品'){
+                            $(obj).css('background-image',"url(__PUBLIC__/images/heart_h.png)");
+                            $(obj).html('取消');
+                        }else{
+                            $(obj).css('background','#FF9900');
+                            $(obj).html("已收藏");
+                        }
+
+
+                    }else{
+                        if(type == '商品'){
+                            $(obj).css('background-image',"url(__PUBLIC__/images/heart.png)");
+                            $(obj).html('收藏');
+                        }else{
+                            $(obj).css('background','#ccc');
+                            $(obj).html("收藏店铺");
+                        }
+
+                    }
+
+                }
+            });
+        }
+
+
+        $('.sales,.price').mouseover(function(){
+            $(this).find('ul').css('display','block');
+        });
+        $('.sales ul,.price ul').mouseleave(function(){
+            $(this).css('display','none');
+        });
+
+
+
+    </script>

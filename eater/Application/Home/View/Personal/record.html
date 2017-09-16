@@ -1,0 +1,117 @@
+<script type="text/javascript" src="__PUBLIC__/layer/layer.js"></script>
+
+    <div class="m_right">
+        <div class="mem_tit">
+            浏览记录
+        </div>
+        <?php if($data){?>
+        <?php foreach($data as $k => $v): ?>
+        <span class="record1">
+            <p></p>
+            <div class="mem_tit">
+            	<?php
+            	    if($k == date('Y-m-d')){
+                        echo '今天';
+            	    }else if($k == date("Y-m-d",strtotime("-1 day"))){
+                        echo '昨天';
+            	    }else{
+            	        echo $k;
+            	    }
+            	?>
+            </div>
+           	<table border="0" class="order_tab" style="width:930px;" cellspacing="0" cellpadding="0">
+              <tr>
+
+                    <td align="center" width="420">商品名称</td>
+                    <td align="center" width="180">价格</td>
+                    <td align="center" width="270">操作</td>
+
+              </tr>
+            <?php foreach($v as $k1 => $v1): ?>
+              <tr>
+
+                <td style="font-family:'宋体';">
+                    <div class="sm_img"><img src="<?php echo IMG_URL.$v1['goods_logo_url']?>" width="48" height="48" /></div>
+                    <a href="<?php echo U('Index/item',array('id'=>$v1['id']))?>"><?php echo $v1['goods_title'];?></a>
+                </td>
+                <td align="center">￥<?php echo $v1['goods_shop_price'];?></td>
+                <td align="center">
+                    <a onclick="ajaxFollow(this,'<?php echo $v1[id];?>','<?php echo $_SESSION[eater_uid];?>')">
+                        <?php if($v1['is_follow']){?>
+                            已收藏
+                        <?php }else{?>
+                            收藏
+                        <?php }?>
+
+                    </a>&nbsp; &nbsp;
+                    <a href="<?php echo U('Index/item',array('id'=>$v1['id']))?>" style="color:#ff4e00;">加入购物车</a>&nbsp; &nbsp;
+                    <a href="javascript:void(0);" onclick="delRecord(this,'<?php echo $v1[id];?>','<?php echo $k;?>')">删除</a>
+                </td>
+
+              </tr>
+                <?php endforeach; ?>
+
+            </table>
+            </span>
+        <?php endforeach; ?>
+        <?php }else{?>
+            <p></p>
+            <div class="mem_tit">
+                暂无浏览记录
+            </div>
+        <?php }?>
+
+            
+        </div>
+    </div>
+	<!--End 用户中心 End-->
+        <script>
+
+            // ajax 关注该商品
+            function ajaxFollow(obj,value_id,user_id){
+
+                // 如果用户没有登录，跳转到登录页面
+                if(user_id == "" || user_id != '<?php echo $_SESSION[eater_uid]?>'){
+                    window.location.href="{:U('Login/login')}";
+                    return false;
+                }
+                $.ajax({
+                    type : 'post',
+                    url  : "{:U('Index/ajaxFollow')}",
+                    data : {
+                        value_id : value_id,
+                        user_id  : user_id,
+                        type : '商品',
+                    },
+                    success : function(response){
+                        if(response.status){
+
+                            $(obj).html('已收藏');
+                            layer.msg('收藏成功~', {icon: 6,time : 1000},function(){location.href=""});
+                        }else{
+
+                            $(obj).html('收藏');
+                            layer.msg('已取消~', {icon: 5,time : 1000},function(){location.href=""});
+                        }
+
+                    }
+                });
+            }
+
+                //  ajax 删除浏览记录
+            function delRecord(obj,goods_id,time){
+
+
+                $.ajax({
+                    type : 'get',
+                    url : '__CONTROLLER__/delRecord/goods_id/'+goods_id+'/time/'+time,
+                    success : function(){
+                        $(obj).parents('tr').hide(300,function(){$(this).remove();});
+
+                        if($(obj).parents('.order_tab').find('tr').length == 2){
+                            $(obj).parents('.record1').hide(300,function(){$(this).remove();})
+                        }
+                    }
+                });
+            }
+        </script>
