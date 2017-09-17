@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>广西大学危险化学品管理系统</title>
+
+<link href="__PUBLIC__/Index/css/index.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="all">
+	<div class="header">
+    	<div class="logo">
+        	<div class="logo-left">
+            	<img src="__PUBLIC__/Index/images/logo.png" alt="广西大学" style="float:left">
+                <p style="float:left">/<span>危险化学品管理中心</span></p>
+            </div>
+            <div class="logo-right">
+            	<p><a href="{:U(MODULE_NAME.'/Login/login')}" style="text-decoration: none">安全登录</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="banner">
+    	<img src="__PUBLIC__/Index/images/banner1.jpg" alt="" class="banner1">
+        <img src="__PUBLIC__/Index/images/banner2.jpg" alt="" class="banner2">
+        <img src="__PUBLIC__/Index/images/banner3.jpg" alt="" class="banner3">
+    </div>
+    <div class="container">
+    	<div class="anquanzhishi">
+        	<div id="top-left">
+            	<img src="__PUBLIC__/Index/images/anquanzhishi.png" alt="">
+            	<p>安全知识/<span>Safety knowledge</span></p>
+            </div>
+            <div id="main-left">
+            	<ul>
+                    <?php foreach($safety as $v):?>
+                	<li><a href="{:U(MODULE_NAME.'/Index/main',array('id'=>$v['id']))}" target="_blank"><?php echo $v['title']?></a></li>
+                    <?php endforeach;?>
+                </ul>
+            </div>
+            <div id="bottom-left">
+                <h4 style="display:block;text-align:center;padding-top:10px;"><?php echo $show;?></h4>
+            </div>
+        </div>
+        <div class="guizhangzhidu-zuixintonggao">
+        	<div class="right-top">
+            	<img src="__PUBLIC__/Index/images/guizhangzhidu.png" alt="">
+            	<p>规章制度/<span>The rules</span></p>
+            </div>
+            <div class="right-main">
+            	<ul>
+                    <?php foreach($rules as $v):?>
+                    <li><a href="{:U(MODULE_NAME.'/Index/main1',array('id'=>$v['id']))}" target="_blank"><?php echo $v['title']?></a></li>
+                    <?php endforeach;?>
+                </ul>
+            </div>
+        </div>
+        <div class="guizhangzhidu-zuixintonggao">
+        	<div class="right-top">
+            	<img src="__PUBLIC__/Index/images/zuixintonggao.png" alt="">
+            	<p>最新通告/<span>The announcement</span></p>
+            </div>
+            <div class="right-main">
+            	<ul>
+                    <?php foreach($notice as $v):?>
+                    <li><a href="{:U(MODULE_NAME.'/Index/main2',array('id'=>$v['id']))}" target="_blank"><?php echo $v['title']?></a></li>
+                    <?php endforeach;?>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+    	<div class="text">
+    		<p>广西大学 危险化学品管理中心</p>
+        	<p>版权所有 &copy; 2016 广西大学实验室，并保留所有权利。</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

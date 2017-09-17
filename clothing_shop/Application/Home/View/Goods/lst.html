@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Clothing Shop 管理中心 - 列表 </title>
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="__PUBLIC__/Styles/general.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/Styles/main.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="__PUBLIC__/Js/jquery-1.4.2.min.js"></script>
+</head>
+<body>
+<h1>
+
+    <span class="action-span1"><a href="#">Clothing Shop 管理中心</a></span>
+    <span id="search_id" class="action-span1"> - 列表 </span>
+    <div style="clear:both"></div>
+</h1>
+<div class="form-div">
+    <form action="{:U(MODULE_NAME.'/goods/lst')}" name="searchForm" method="get">
+        <img src="__PUBLIC__/Images/icon_search.gif" width="26" height="22" border="0" alt="search" />
+        <input type="text" name="un" size="15" value="<?php echo $_GET['un']?>" placeholder="输入商品名称关键字"/>
+        <input type="submit" value=" 搜索 " class="button" />
+    </form>
+</div>
+<form method="post" action="{:U(MODULE_NAME.'/Category/bdel')}" name="listForm">
+    <div class="list-div" id="listDiv">
+        <table cellpadding="3" cellspacing="1">
+            <tr>
+                <th>id</th>
+                <th>商品名称</th>
+                <th>商品图片</th>
+                <th>商品分类</th>
+                <th>商品尺寸</th>
+                <th>商品价格</th>
+                <th>商品详情</th>
+                <th>商品上架时间</th>
+                <th>操作</th>
+            </tr>
+            <?php foreach ($goodsData as $k => $v): ?>
+            <tr>
+                <td align="center"><?php echo $v['id']?></td>
+                <td align="center"><?php echo $v['goods_name']?></td>
+                <td align="center"><img src="/clothing_shop/Uploads/<?php echo $v['goods_image']; ?>" width="120"></td>
+                <td align="center"><?php echo $v['cat_name']?></td>
+                <td align="center"><?php echo $v['goods_size']?></td>
+                <td align="center"><?php echo $v['goods_price']?>元</td>
+                <td align="center"><?php echo $v['goods_info']?></td>
+                <td align="center"><?php echo $v['goods_time']?></td>
+                <td align="center">
+                    <a href="{:U(MODULE_NAME.'/goods/save',array('id'=>$v['id']))}" title="编辑">编辑</a>
+                    <a onclick="return confirm('确定要删除吗？');" href="{:U(MODULE_NAME.'/goods/del',array('id'=>$v['id']))}" title="编辑">移除</a>
+                </td>
+            </tr>
+           	<?php endforeach; ?>
+
+        </table>
+    </div>
+</form>
+
+<div id="footer">
+    CopyRight &copy; 版权归 Clothing Shop 所有。
+</div>
+</body>
+</html>
+<script>
+    function t(){
+        var a = document.getElementsByClassName('check');
+        var b = document.getElementById('checkbox');
+        if(b.checked==true){
+            for(var i=0;i<a.length;i++){
+                a[i].checked = true;
+            }
+        }else{
+            for(var i=0;i<a.length;i++){
+                a[i].checked = false;
+            }
+        }
+
+    }
+</script>

@@ -1,0 +1,85 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>TXV 管理中心 - 列表 </title>
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="/tvx/Public/Styles/general.css" rel="stylesheet" type="text/css" />
+<link href="/tvx/Public/Styles/main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/tvx/Public/Js/jquery-1.4.2.min.js"></script>
+</head>
+<body>
+<h1>
+    <span class="action-span"><a href="<?php echo U(MODULE_NAME.'/Admin/add');?>">添加</a></span>
+    <span class="action-span1"><a href="#">TXV 管理中心</a></span>
+    <span id="search_id" class="action-span1"> - 列表 </span>
+    <div style="clear:both"></div>
+</h1>
+
+<form method="post" action="<?php echo U(MODULE_NAME.'/Admin/bdel');?>" name="listForm">
+    <div class="list-div" id="listDiv">
+        <table cellpadding="3" cellspacing="1">
+            <tr>
+                <th width="40"><input  onclick="t()" id="checkbox" type="checkbox"/></th>
+                <th>ID</th>
+                <th>用户名</th>
+                <th>角色</th>
+                <th>真实姓名</th>
+                <th>手机号</th>
+                <th>操作</th>
+            </tr>
+            <?php foreach($arr as $v):?>
+            <?php foreach($v as $k):?>
+            <tr>
+                <td align="center">
+                    <?php if($k['id']>1):?>
+                    <input class="check" type="checkbox" name="del[]" value="<?php echo $k['id']?>"/>
+                    <?php endif;?>
+                </td>
+                <td align="center"><?php echo $k['id'];?></td>
+                <td align="center"><?php echo $k['username']?></td>
+                <td align="center"><?php
+ foreach($roleData as $h){ if($h['id'] == $k['role_id']) echo $h['cat_name']; } ?></td>
+                <td align="center"><?php echo $k['name'];?></td>
+                <td align="center"><?php echo $k['phone'];?></td>
+                <td align="center">
+                <a href="<?php echo U(MODULE_NAME.'/Admin/save',array('id'=>$k['id']));?>" title="编辑">编辑</a>
+                    <?php if($k['id'] > 1):?>|
+                <a onclick="return confirm('确定要删除吗？');" href="<?php echo U(MODULE_NAME.'/Admin/del',array('id'=>$k['id'],'role_id'=>$k['role_id']));?>" title="编辑">移除</a>
+                    <?php endif;?>
+                </td>
+            </tr>
+            <?php endforeach;?>
+            <?php endforeach;?>
+            <tr>
+                <td><input onclick="return confirm('确定要删除吗？');" type="submit" value="删除所选" /></td>
+                <td align="right" nowrap="true" colspan="6">
+                    <?php echo $show;?>
+                </td>
+            </tr>
+        </table>
+    </div>
+</form>
+
+<div id="footer">
+    TVX 管理中心<br />
+    版权所有 &copy; TVX，并保留所有权利。</div>
+</body>
+</html>
+<script>
+    function t(){
+        var a = document.getElementsByClassName('check');
+        var b = document.getElementById('checkbox');
+        if(b.checked==true){
+            for(var i=0;i<a.length;i++){
+                a[i].checked = true;
+            }
+        }else{
+            for(var i=0;i<a.length;i++){
+                a[i].checked = false;
+            }
+        }
+
+    }
+
+</script>

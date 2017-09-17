@@ -1,0 +1,62 @@
+
+<div class="w980 height20"></div>
+<div id="bgfooter">
+    <div id="footer">
+        <div class="copyright">
+            <div class="copyright1"><a href="" title=""><img src="__PUBLIC__/Yourphp/Tpl/Home/Default/Public/images/logo.jpg" style="width:230px" alt="" alt="" /></a></div>
+            <div class="copyright2">Copyright&copy;2016 <a href="http://www.miit.gov.cn/" rel="nofollow" target="_blank">版权归 创特装饰 所有</a>
+                <br />
+            </div>
+        </div>
+        <div class="subnav">
+            <div class="subnav2">
+                <strong>案例</strong>
+                <?php $cat1 = M('category')->limit(4)->select();
+                    foreach($cat1 as $v):
+                ?>
+                <span><a href="{:U('Index/cas',array('un'=>$v['id']))}" title="现代简约"><?php echo $v['name']?></a></span>
+                <?php endforeach;?>
+            </div>
+            <div class="subnav3">
+                <strong>工程施工</strong>
+                <span><a href="{:U(MODULE_NAME.'/Index/project')}" title="施工体系">工程案例</a></span>
+                <span><a href="{:U(MODULE_NAME.'/Index/build')}" title="合作材料">施工现场</a></span>
+            </div>
+
+            <div class="subnav5">
+                <strong>更多链接</strong>
+                <span><a href="{:U('Index/about')}" title="公司介绍">关于我们</a></span>
+                <span><a href="{:U('Index/newslst')}" title="最新活动">资讯中心</a></span>
+            </div>
+        </div>
+    </div>
+</div>
+<!--底部服务栏-->
+<DIV id="bottomDiv1" style="left: 0px;">
+    <DIV class="bottom_float">
+        <form name="myform" id="myform" action="{:U(MODULE_NAME.'/Index/mail')}" method="post">
+            <DIV class="bottom_float_in">
+                <input type="hidden" id="catid" name="catid" value="36" />
+                <input type="hidden" id="catid" name="moduleid" value="6" />
+                <input type="hidden" name="lang" value="" />
+                <DIV class="left"><a href=""><img src="__PUBLIC__/Yourphp/Tpl/Home/Default/Public/images/fbftlabel.jpg" alt="预约量房" /></a></DIV>
+                <DIV class="left ml9">姓名：
+                    <input type="text" name="name" id="title" value="" class="fbft2" />
+                </DIV>
+                <DIV class="left ml9">电话：
+                    <input type="text" name="phoneNum" id="telephone" value="" class="fbft2" />
+                </DIV>
+                <DIV class="left ml9">楼盘：
+                    <input type="text" name="loupan" id="fbloupan" value="" class="fbft2" />
+                </DIV>
+                <DIV class="left ml9">面积：
+                    <input type="text" name="mianji" id="fbmianji" value="" class="fbft2" />
+                </DIV>
+                <DIV class="bottom_float_server">
+                    <input onclick="return confirm('确定提交吗？');" type="submit" name="submit" value="" class="send" />
+                </DIV>
+            </DIV>
+        </form>
+    </DIV>
+</DIV>
+<div class="clear"></div>

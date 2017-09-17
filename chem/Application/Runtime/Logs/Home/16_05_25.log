@@ -1,0 +1,425 @@
+[ 2016-05-25T21:07:49+08:00 ] ::1 /chem/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007670s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.011764s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011897s ]
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-05-25T21:08:00+08:00 ] ::1 /chem/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000414s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000868s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001062s ]
+SQL: SHOW COLUMNS FROM `safety` [ RunTime:0.1160s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `safety` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `safety` ORDER BY time DESC LIMIT 0,10   [ RunTime:0.0425s ]
+SQL: SHOW COLUMNS FROM `rules` [ RunTime:0.0336s ]
+SQL: SELECT * FROM `rules` ORDER BY time DESC LIMIT 4   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `notice` [ RunTime:0.0301s ]
+SQL: SELECT * FROM `notice` ORDER BY time DESC LIMIT 4   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000074s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000189s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.053812s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.054013s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.013581s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.013729s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.043784s ]
+INFO: [ app_end ] --END-- [ RunTime:0.043891s ]
+
+[ 2016-05-25T21:08:02+08:00 ] ::1 /chem/index.php/Home/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000424s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000459s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000555s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000064s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000177s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010613s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010744s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000660s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000815s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000504s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000595s ]
+
+[ 2016-05-25T21:08:03+08:00 ] ::1 /chem/index.php/Home/Login/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000583s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000642s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000800s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000780s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000964s ]
+
+[ 2016-05-25T21:08:08+08:00 ] ::1 /chem/index.php/Home/Login/verify.html?Math.random();
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000360s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000464s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000566s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000613s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000731s ]
+
+[ 2016-05-25T21:08:12+08:00 ] ::1 /chem/index.php/Home/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001042s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000732s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000898s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.0982s ]
+SQL: SELECT * FROM `admin` WHERE `username` = 'admin' AND `password` = 'admin' AND `level` = 0  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000061s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000162s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035689s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035849s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000465s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000559s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000640s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000771s ]
+
+[ 2016-05-25T21:08:13+08:00 ] ::1 /chem/index.php/Home/Back/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000383s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000487s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000584s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000058s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000163s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014859s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014972s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000377s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000462s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000500s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000588s ]
+
+[ 2016-05-25T21:08:13+08:00 ] ::1 /chem/index.php/Home/Back/top.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000329s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000607s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000724s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000174s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.063213s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.063314s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000410s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000494s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000476s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000565s ]
+
+[ 2016-05-25T21:08:13+08:00 ] ::1 /chem/index.php/Home/Back/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000513s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000470s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000572s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000177s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000294s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016945s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017054s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000306s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000401s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000643s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000771s ]
+
+[ 2016-05-25T21:08:13+08:00 ] ::1 /chem/index.php/Home/Back/main.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000380s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000460s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000566s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000314s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000501s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018219s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018351s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000369s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000511s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001498s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001672s ]
+
+[ 2016-05-25T21:08:14+08:00 ] ::1 /chem/index.php/Home/Apply/clearlst
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000413s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000579s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000691s ]
+SQL: SHOW COLUMNS FROM `clear` [ RunTime:0.0800s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\wamp\wamp\www\chem\ThinkPHP\Library\Think\Db\Driver.class.php 第 504 行.
+SQL: SELECT * FROM `clear` ORDER BY time DESC  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `stock` [ RunTime:0.0673s ]
+SQL: SELECT * FROM `stock`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000094s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000232s ]
+NOTIC: [8] Undefined index: un E:\wamp\wamp\www\chem\Application\Runtime\Cache\Home\8e5149f627cf606bbef175cfefa1a2d7.php 第 20 行.
+NOTIC: [8] Undefined variable: price E:\wamp\wamp\www\chem\Application\Runtime\Cache\Home\8e5149f627cf606bbef175cfefa1a2d7.php 第 39 行.
+NOTIC: [8] Undefined variable: count E:\wamp\wamp\www\chem\Application\Runtime\Cache\Home\8e5149f627cf606bbef175cfefa1a2d7.php 第 39 行.
+NOTIC: [8] Undefined index: role_id E:\wamp\wamp\www\chem\Application\Runtime\Cache\Home\8e5149f627cf606bbef175cfefa1a2d7.php 第 55 行.
+NOTIC: [8] Undefined index: role_id E:\wamp\wamp\www\chem\Application\Runtime\Cache\Home\8e5149f627cf606bbef175cfefa1a2d7.php 第 55 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.043559s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.043729s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000498s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000618s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000663s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000787s ]
+
+[ 2016-05-25T21:08:23+08:00 ] ::1 /chem/index.php/Home/Apply/clearlst.html?un=%E5%92%8C%E5%9D%A4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000405s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000755s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000894s ]
+SQL: SHOW COLUMNS FROM `clear` [ RunTime:0.0275s ]
+SQL: SELECT * FROM `clear` WHERE ( operator='和坤' ) ORDER BY time DESC  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `stock` [ RunTime:0.0253s ]
+SQL: SELECT * FROM `stock`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000085s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000204s ]
+NOTIC: [8] Undefined variable: count E:\wamp\wamp\www\chem\Application\Runtime\Cache\Home\8e5149f627cf606bbef175cfefa1a2d7.php 第 65 行.
+NOTIC: [8] Undefined variable: price E:\wamp\wamp\www\chem\Application\Runtime\Cache\Home\8e5149f627cf606bbef175cfefa1a2d7.php 第 66 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007746s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007862s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000340s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000442s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000496s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000602s ]
+
+[ 2016-05-25T21:08:27+08:00 ] ::1 /chem/index.php/Home/Apply/clearlst.html?un=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000427s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000492s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000605s ]
+SQL: SHOW COLUMNS FROM `clear` [ RunTime:0.1554s ]
+SQL: SELECT * FROM `clear` WHERE ( operator='1' ) ORDER BY time DESC  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `stock` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `stock`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000084s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000202s ]
+NOTIC: [8] Undefined variable: count E:\wamp\wamp\www\chem\Application\Runtime\Cache\Home\8e5149f627cf606bbef175cfefa1a2d7.php 第 65 行.
+NOTIC: [8] Undefined variable: price E:\wamp\wamp\www\chem\Application\Runtime\Cache\Home\8e5149f627cf606bbef175cfefa1a2d7.php 第 66 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008947s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009065s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000345s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000447s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000490s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000596s ]
+
+[ 2016-05-25T21:08:30+08:00 ] ::1 /chem/index.php/Home/Apply/clearlst.html?un=%E5%92%8C%E5%9D%A4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000583s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000757s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000939s ]
+SQL: SHOW COLUMNS FROM `clear` [ RunTime:0.1259s ]
+SQL: SELECT * FROM `clear` WHERE ( operator='和坤' ) ORDER BY time DESC  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `stock` [ RunTime:0.0095s ]
+SQL: SELECT * FROM `stock`  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000134s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000318s ]
+NOTIC: [8] Undefined variable: count E:\wamp\wamp\www\chem\Application\Runtime\Cache\Home\8e5149f627cf606bbef175cfefa1a2d7.php 第 65 行.
+NOTIC: [8] Undefined variable: price E:\wamp\wamp\www\chem\Application\Runtime\Cache\Home\8e5149f627cf606bbef175cfefa1a2d7.php 第 66 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019707s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020021s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000529s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000688s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000838s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001034s ]
+
+[ 2016-05-25T21:08:31+08:00 ] ::1 /chem/index.php/Home/Apply/clearlst.html?un=%E5%92%8C%E5%9D%A4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000517s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000826s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001080s ]
+SQL: SHOW COLUMNS FROM `clear` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `clear` WHERE ( operator='和坤' ) ORDER BY time DESC  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `stock` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `stock`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000181s ]
+NOTIC: [8] Undefined variable: count E:\wamp\wamp\www\chem\Application\Runtime\Cache\Home\8e5149f627cf606bbef175cfefa1a2d7.php 第 65 行.
+NOTIC: [8] Undefined variable: price E:\wamp\wamp\www\chem\Application\Runtime\Cache\Home\8e5149f627cf606bbef175cfefa1a2d7.php 第 66 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006550s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006657s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000302s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000390s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000427s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000518s ]
+
+[ 2016-05-25T21:08:32+08:00 ] ::1 /chem/index.php/Home/Apply/clearlst.html?un=%E5%92%8C%E5%9D%A4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000400s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000517s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000633s ]
+SQL: SHOW COLUMNS FROM `clear` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `clear` WHERE ( operator='和坤' ) ORDER BY time DESC  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `stock` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `stock`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000179s ]
+NOTIC: [8] Undefined variable: count E:\wamp\wamp\www\chem\Application\Runtime\Cache\Home\8e5149f627cf606bbef175cfefa1a2d7.php 第 65 行.
+NOTIC: [8] Undefined variable: price E:\wamp\wamp\www\chem\Application\Runtime\Cache\Home\8e5149f627cf606bbef175cfefa1a2d7.php 第 66 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008623s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008785s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000391s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000478s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000432s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000522s ]
+
+[ 2016-05-25T21:08:33+08:00 ] ::1 /chem/index.php/Home/Apply/clearlst.html?un=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000429s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000505s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000616s ]
+SQL: SHOW COLUMNS FROM `clear` [ RunTime:0.0480s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\wamp\wamp\www\chem\ThinkPHP\Library\Think\Db\Driver.class.php 第 504 行.
+SQL: SELECT * FROM `clear` ORDER BY time DESC  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `stock` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `stock`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000092s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000202s ]
+NOTIC: [8] Undefined variable: price E:\wamp\wamp\www\chem\Application\Runtime\Cache\Home\8e5149f627cf606bbef175cfefa1a2d7.php 第 39 行.
+NOTIC: [8] Undefined variable: count E:\wamp\wamp\www\chem\Application\Runtime\Cache\Home\8e5149f627cf606bbef175cfefa1a2d7.php 第 39 行.
+NOTIC: [8] Undefined index: role_id E:\wamp\wamp\www\chem\Application\Runtime\Cache\Home\8e5149f627cf606bbef175cfefa1a2d7.php 第 55 行.
+NOTIC: [8] Undefined index: role_id E:\wamp\wamp\www\chem\Application\Runtime\Cache\Home\8e5149f627cf606bbef175cfefa1a2d7.php 第 55 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006965s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007083s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000290s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000374s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000427s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000514s ]
+
+[ 2016-05-25T21:08:44+08:00 ] ::1 /chem/index.php/Home/Apply/clearlst.html?un=%E5%92%8C%E7%8F%85
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000675s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000548s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000669s ]
+SQL: SHOW COLUMNS FROM `clear` [ RunTime:0.1114s ]
+SQL: SELECT * FROM `clear` WHERE ( operator='和珅' ) ORDER BY time DESC  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `stock` [ RunTime:0.0969s ]
+SQL: SELECT * FROM `stock`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000176s ]
+NOTIC: [8] Undefined variable: price E:\wamp\wamp\www\chem\Application\Runtime\Cache\Home\8e5149f627cf606bbef175cfefa1a2d7.php 第 39 行.
+NOTIC: [8] Undefined variable: count E:\wamp\wamp\www\chem\Application\Runtime\Cache\Home\8e5149f627cf606bbef175cfefa1a2d7.php 第 39 行.
+NOTIC: [8] Undefined index: role_id E:\wamp\wamp\www\chem\Application\Runtime\Cache\Home\8e5149f627cf606bbef175cfefa1a2d7.php 第 55 行.
+NOTIC: [8] Undefined index: role_id E:\wamp\wamp\www\chem\Application\Runtime\Cache\Home\8e5149f627cf606bbef175cfefa1a2d7.php 第 55 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006835s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006929s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000309s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000430s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000519s ]
+
+[ 2016-05-25T21:08:45+08:00 ] ::1 /chem/index.php/Home/Apply/clearlst.html?un=%E5%92%8C%E7%8F%85
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000738s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000527s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000642s ]
+SQL: SHOW COLUMNS FROM `clear` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `clear` WHERE ( operator='和珅' ) ORDER BY time DESC  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `stock` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `stock`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000175s ]
+NOTIC: [8] Undefined variable: price E:\wamp\wamp\www\chem\Application\Runtime\Cache\Home\8e5149f627cf606bbef175cfefa1a2d7.php 第 39 行.
+NOTIC: [8] Undefined variable: count E:\wamp\wamp\www\chem\Application\Runtime\Cache\Home\8e5149f627cf606bbef175cfefa1a2d7.php 第 39 行.
+NOTIC: [8] Undefined index: role_id E:\wamp\wamp\www\chem\Application\Runtime\Cache\Home\8e5149f627cf606bbef175cfefa1a2d7.php 第 55 行.
+NOTIC: [8] Undefined index: role_id E:\wamp\wamp\www\chem\Application\Runtime\Cache\Home\8e5149f627cf606bbef175cfefa1a2d7.php 第 55 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007127s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007239s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000539s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000631s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000456s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000542s ]
+

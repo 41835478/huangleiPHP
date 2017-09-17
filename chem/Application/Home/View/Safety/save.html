@@ -1,0 +1,62 @@
+<!-- $Id: brand_info.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>危险化学品 管理中心 - 修改 </title>
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="__PUBLIC__/Styles/general.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/Styles/main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+    window.UEDITOR_HOME_URL = '__ROOT__/Application/Data/ueditor/';
+    window.onload = function(){
+        window.UEDITOR_CONFIG.initialFrameWidth =800;
+        window.UEDITOR_CONFIG.initialFrameHeight =300;
+        window.UEDITOR_CONFIG.savePath= ['upload','upload1'];
+        window.UEDITOR_CONFIG.imageUrl = "{:U(MODULE_NAME.'/Blog/upload')}";
+        window.UEDITOR_CONFIG.imagePath = '__ROOT__/Uploads/';
+        UE.getEditor('content');
+    }
+</script>
+<js file="__ROOT__/Application/Data/ueditor/ueditor.config.js" />
+<js file="__ROOT__/Application/Data/ueditor/ueditor.all.min.js" />
+</head>
+<body>
+<h1>
+    <span class="action-span"><a href="{:U(MODULE_NAME.'/safety/lst')}">列表</a></span>
+    <span class="action-span1"><a href="#">危险化学品 管理中心</a></span>
+    <span id="search_id" class="action-span1"> - 安全知识修改 </span>
+    <div style="clear:both"></div>
+</h1>
+<div class="main-div">
+    <form method="post" action="{:U(MODULE_NAME.'/safety/save')}">
+        <input type="hidden" name="id" value="<?php echo $data['id']?>">
+        <table cellspacing="1" cellpadding="3" width="100%">
+            <tr>
+                <td class="label">标题</td>
+                <td>
+                    <input type="text" name="title" maxlength="60" value="<?php echo $data['title']?>" />
+                </td>
+            </tr>
+            <tr>
+                <td class="label">内容</td>
+                <td>
+                    <textarea name="content" id="content"><?php echo $data['content']?></textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" align="center"><br />
+                    <input type="submit" class="button" value=" 确定 " />
+                    <input type="reset" class="button" value=" 重置 " />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<div id="footer">
+    危险化学品 管理中心<br />
+    版权所有 &copy; 2016 广西大学实验室，并保留所有权利。</div>
+</body>
+</html>

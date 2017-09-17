@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>创特装饰工程有限公司</title>
+<meta name="author" content="" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<link href="__PUBLIC__/Yourphp/Tpl/Home/Default/Public/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link rel="stylesheet" href="__PUBLIC__/Yourphp/Tpl/Home/Default/Public/css/common.css" type="text/css" />
+<link rel="stylesheet" href="__PUBLIC__/Yourphp/Tpl/Home/Default/Public/css/style.css" type="text/css" />
+<script type="text/javascript">var jQuery_1_3_2 = $.noConflict(true);
+</script>
+<script src="__PUBLIC__/Public/Js/jquery.min.js"></script>
+<script src="__PUBLIC__/Public/Js/yourphp.nav.js"></script>
+  <script language="javascript" src="Js/jquery-1.4.2.min.js"></script>
+<script src="__PUBLIC__/Public/Js/yourphp.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Yourphp/Tpl/Home/Default/Public/Js/jquery.artDialog.js?skin=default"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/Js/iframeTools.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/Js/swfupload.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/Js/jquery.validate.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Js/meiqia.js"></script>
+</head>
+<body class="lybg">
+<div id="header">
+  <div class="logo"><a href="" target="_blank" ><img src="__PUBLIC__/Uploads/201212/logo.jpg" style="width:260px;" title="" /></a></div>
+  <div class="top_icon">
+    <div class="tel"><img src="__PUBLIC__/Yourphp/Tpl/Home/Default/Public/images/tel.png"  title="" /></div>
+  </div>
+</div>
+<include file="header"/>
+      <script type="text/javascript">var APP	 =	 'index.php';
+var ROOT =	 '';
+var PUBLIC = 'Public';
+yourphpnav.init({navid: "nav"});
+var nav = document.getElementById('nav_37');nav.className=nav.className+" on";
+</script>
+      <img src="__PUBLIC__/Yourphp/Tpl/Home/Default/Public/images/banner1.jpg" width="944" height="260" />
+      <div class="clear"></div>
+    </div>
+    <div class="box_b"></div>
+  </div>
+</div>
+<div class="clear"></div>
+<div class="w980 height10"></div>
+<div class="w980">
+
+  <div class="page_r" style="width:980px;margin-left:0px;">
+    <div class="box_r">
+      <div class="box_r_m" style="background:rgba(255,255,255,0.7); border-radius:15px;width:945px;">
+        <div class="box_r_title"><p style="color:rgba(121,190,247,1.00); font-size:25px;">工程案例/Case Shows</p></div>
+      </div>
+    </div>
+    <?php foreach($data as $v):?>
+    <div class="box_r mtop10" id="box-mtop10">
+        <div class="anli348"  style="background: rgba(255, 255, 255, 0.7);width:200px;height:180px;border-radius: 15px;padding:16px;">
+            <div class="anli348_tu">
+                <a href="{:U(MODULE_NAME.'/Index/img',array('id'=>$v['id']))}" target="_self"><img src="/ct/Uploads/<?php foreach($img as $k){
+            if($k['pro_id'] == $v['id']){
+              echo $k['big_images'];
+              break;
+            }
+          }?>" width="200" height="148" border="0"></a>
+            </div>
+            <div class="anli348_title"><?php echo $v['name']?></div>
+        </div>
+    </div>
+    <?php endforeach;?>
+  </div>
+</div>
+
+
+<include file="footer"/>
+</body>
+</html>

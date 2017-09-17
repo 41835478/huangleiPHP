@@ -1,0 +1,1478 @@
+[ 2016-12-01T20:28:55+08:00 ] ::1 /ct/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000071s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002161s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002065s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002291s ]
+SQL: SHOW COLUMNS FROM `case` [ RunTime:0.0528s ]
+SQL: SELECT * FROM `case` ORDER BY time DESC LIMIT 4   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `images` [ RunTime:0.0837s ]
+SQL: SELECT * FROM `images`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `active` [ RunTime:0.0498s ]
+SQL: SELECT * FROM `active` ORDER BY top desc,topTime desc LIMIT 7   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0709s ]
+SQL: SELECT * FROM `project` WHERE ( status='否' ) ORDER BY time DESC LIMIT 6   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pro_images` [ RunTime:0.0363s ]
+SQL: SELECT * FROM `pro_images`  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `project` WHERE ( status='是' ) ORDER BY time DESC LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000139s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000281s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0705s ]
+SQL: SELECT * FROM `category` LIMIT 4   [ RunTime:0.0007s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.190482s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.190831s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.007365s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007729s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005464s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005743s ]
+
+[ 2016-12-01T20:29:05+08:00 ] ::1 /ct/index.php/Home/Index/project.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000447s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000674s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000855s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `project` ORDER BY time DESC  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pro_images` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `pro_images`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000166s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000357s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `category` LIMIT 4   [ RunTime:0.0003s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.044338s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.044665s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000965s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001137s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001580s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001775s ]
+
+[ 2016-12-01T20:29:05+08:00 ] ::1 /ct/index.php/Home/Index/Js/jquery-1.4.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000637s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000653s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000759s ]
+ERR: 非法操作:Js
+
+[ 2016-12-01T20:29:06+08:00 ] ::1 /ct/index.php/Home/Index/Js/jquery-1.4.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000435s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000559s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000652s ]
+ERR: 非法操作:Js
+
+[ 2016-12-01T20:29:06+08:00 ] ::1 /ct/index.php/Home/Index/cas.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000464s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000646s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000759s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `category`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `case` [ RunTime:0.0039s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\wamp\wamp\www\ct\ThinkPHP\Library\Think\Db\Driver.class.php 第 504 行.
+SQL: SELECT * FROM `case` ORDER BY time DESC  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `images` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `images`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000165s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000266s ]
+NOTIC: [8] Undefined variable: catName E:\wamp\wamp\www\ct\Application\Runtime\Cache\Home\5c09e99035539bede9502473d169ce91.php 第 76 行.
+SQL: SELECT * FROM `category` LIMIT 4   [ RunTime:0.0003s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.055974s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.056133s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000872s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001051s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001101s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001290s ]
+
+[ 2016-12-01T20:29:07+08:00 ] ::1 /ct/index.php/Home/Index/build.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000497s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000612s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000720s ]
+SQL: SHOW COLUMNS FROM `build` [ RunTime:0.1392s ]
+SQL: SELECT * FROM `build` ORDER BY time DESC  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `build_images` [ RunTime:0.0949s ]
+SQL: SELECT * FROM `build_images`  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000150s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000301s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `category` LIMIT 4   [ RunTime:0.0003s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038277s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.038552s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001197s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001429s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001488s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001781s ]
+
+[ 2016-12-01T20:29:08+08:00 ] ::1 /ct/index.php/Home/Index/newslst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000527s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000833s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000964s ]
+SQL: SHOW COLUMNS FROM `active` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `active` WHERE `cat` = '最新活动' ORDER BY time DESC  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `active` WHERE `cat` = '新闻中心' ORDER BY time DESC  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `active` WHERE `cat` = '装修知识' ORDER BY time DESC  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000212s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000348s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `category` LIMIT 4   [ RunTime:0.0003s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.119147s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.119274s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000536s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000640s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000664s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000825s ]
+
+[ 2016-12-01T20:29:09+08:00 ] ::1 /ct/index.php/Home/Index/about.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000445s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000592s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000697s ]
+SQL: SHOW COLUMNS FROM `company` [ RunTime:0.0460s ]
+SQL: SELECT * FROM `company` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `employ` [ RunTime:0.0385s ]
+SQL: SELECT * FROM `employ` LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000250s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000539s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `category` LIMIT 4   [ RunTime:0.0003s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.039348s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039533s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000965s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001633s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001946s ]
+
+[ 2016-12-01T20:29:21+08:00 ] ::1 /ct/home/back/inex
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000368s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000470s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000566s ]
+ERR: 非法操作:inex
+
+[ 2016-12-01T20:29:24+08:00 ] ::1 /ct/home/back/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000427s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000791s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000934s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000141s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000415s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.123882s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.124197s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000954s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001196s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002244s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002623s ]
+
+[ 2016-12-01T20:29:24+08:00 ] ::1 /ct/index.php/Home/Back/top.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000400s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000781s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000962s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000062s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000166s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.067224s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.067368s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000398s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000512s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000516s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000635s ]
+
+[ 2016-12-01T20:29:24+08:00 ] ::1 /ct/index.php/Home/Back/main.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001306s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001208s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001391s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000071s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000182s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026171s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026378s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000657s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000750s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000763s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000893s ]
+
+[ 2016-12-01T20:29:24+08:00 ] ::1 /ct/index.php/Home/Back/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000212s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002018s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001603s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001840s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000291s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000878s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024266s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024415s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000866s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000971s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000899s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001051s ]
+
+[ 2016-12-01T20:29:26+08:00 ] ::1 /ct/index.php/Home/Category/lst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000498s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000776s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000893s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `category`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000070s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000206s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014627s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014771s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000697s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000795s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000724s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000825s ]
+
+[ 2016-12-01T20:29:27+08:00 ] ::1 /ct/index.php/Home/Case/lst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000523s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000774s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000886s ]
+SQL: SHOW COLUMNS FROM `case` [ RunTime:0.0079s ]
+SQL: SELECT * FROM `case`  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `images` [ RunTime:0.0079s ]
+SQL: SELECT * FROM `images`  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `category`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000112s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000285s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.041392s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041645s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000969s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001121s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001099s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001256s ]
+
+[ 2016-12-01T20:29:27+08:00 ] ::1 /ct/index.php/Home/Project/lst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000443s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000588s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000706s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `project`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pro_images` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `pro_images`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000083s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000212s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.050549s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.050679s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000426s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000531s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000634s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000750s ]
+
+[ 2016-12-01T20:29:28+08:00 ] ::1 /ct/index.php/Home/Build/lst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000899s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001329s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001527s ]
+SQL: SHOW COLUMNS FROM `build` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `build`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `build_images` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `build_images`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000183s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.051767s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.051924s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000566s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000663s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000708s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000838s ]
+
+[ 2016-12-01T20:29:30+08:00 ] ::1 /ct/index.php/Home/Employ/lst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000455s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000584s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000701s ]
+SQL: SHOW COLUMNS FROM `employ` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `employ`  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000085s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000230s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.045348s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.045535s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000393s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000498s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000695s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000809s ]
+
+[ 2016-12-01T20:29:30+08:00 ] ::1 /ct/index.php/Home/Company/lst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000438s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000793s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000962s ]
+SQL: SHOW COLUMNS FROM `company` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `company`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000082s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000217s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014269s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014435s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000389s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000496s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000779s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000959s ]
+
+[ 2016-12-01T20:29:31+08:00 ] ::1 /ct/index.php/Home/Employ/lst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000418s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000602s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000724s ]
+SQL: SHOW COLUMNS FROM `employ` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `employ`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000083s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000213s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008077s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008224s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000378s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000486s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000561s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000667s ]
+
+[ 2016-12-01T20:29:32+08:00 ] ::1 /ct/index.php/Home/Active/lst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000447s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000589s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000715s ]
+SQL: SHOW COLUMNS FROM `active` [ RunTime:0.0094s ]
+SQL: SELECT * FROM `active` ORDER BY time desc  [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000079s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000264s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.052650s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.052884s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000410s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000501s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000783s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000930s ]
+
+[ 2016-12-01T20:29:36+08:00 ] ::1 /ct/index.php/Home/Category/lst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000457s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000647s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000759s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `category`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000182s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008225s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008378s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000515s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000627s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000588s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000679s ]
+
+[ 2016-12-01T20:29:38+08:00 ] ::1 /ct/index.php/Home/Project/lst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000379s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000734s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000843s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `project`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pro_images` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `pro_images`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000068s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000175s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010750s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010963s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000741s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000942s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000862s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001025s ]
+
+[ 2016-12-01T20:29:39+08:00 ] ::1 /ct/index.php/Home/Project/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000416s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000697s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000821s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000117s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000343s ]
+NOTIC: [8] Undefined variable: k0 E:\wamp\wamp\www\ct\Application\Runtime\Cache\Home\127923f10477831de5c803486c7e70da.php 第 38 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.116042s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.116187s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001045s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001221s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002131s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002470s ]
+
+[ 2016-12-01T20:34:40+08:00 ] ::1 /ct/home/back/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000377s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000569s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000671s ]
+ERR: 非法操作:login
+
+[ 2016-12-01T20:34:46+08:00 ] ::1 /ct/home/login/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000608s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000593s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000693s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000107s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000211s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.052922s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.053035s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000507s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000595s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000678s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000782s ]
+
+[ 2016-12-01T20:34:46+08:00 ] ::1 /ct/index.php/Home/Login/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000402s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000782s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000918s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000933s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001100s ]
+
+[ 2016-12-01T20:34:49+08:00 ] ::1 /ct/index.php/Home/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000582s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000534s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000637s ]
+ERR: 1146:Table 'ct.admin' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `admin`
+ERR: 1146:Table 'ct.admin' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `admin`
+
+[ 2016-12-01T20:34:57+08:00 ] ::1 /ct/index.php/Home/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000544s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000628s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000744s ]
+ERR: 1146:Table 'ct.admin' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `admin`
+ERR: 1146:Table 'ct.admin' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `admin`
+
+[ 2016-12-01T20:35:16+08:00 ] ::1 /ct/home/back/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000523s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000741s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000055s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000179s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006315s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006419s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000449s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000541s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000861s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001042s ]
+
+[ 2016-12-01T20:35:16+08:00 ] ::1 /ct/index.php/Home/Back/main.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000624s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000626s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000751s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000105s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000359s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007031s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007140s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000416s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000516s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000657s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000764s ]
+
+[ 2016-12-01T20:35:16+08:00 ] ::1 /ct/index.php/Home/Back/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000420s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000948s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001097s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000093s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000201s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008932s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009053s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000520s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000626s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001398s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001678s ]
+
+[ 2016-12-01T20:35:16+08:00 ] ::1 /ct/index.php/Home/Back/top.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000623s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000975s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001146s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000064s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000168s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006307s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006445s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000427s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000517s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000696s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000793s ]
+
+[ 2016-12-01T20:35:18+08:00 ] ::1 /ct/index.php/Home/Project/lst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000455s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000630s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000744s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `project`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pro_images` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `pro_images`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000114s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000296s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009286s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009411s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000587s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000584s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000673s ]
+
+[ 2016-12-01T20:35:19+08:00 ] ::1 /ct/index.php/Home/Project/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000464s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000670s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000785s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000111s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000295s ]
+NOTIC: [8] Undefined variable: k0 E:\wamp\wamp\www\ct\Application\Runtime\Cache\Home\127923f10477831de5c803486c7e70da.php 第 38 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007383s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007495s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000517s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000619s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000663s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000771s ]
+
+[ 2016-12-01T20:35:47+08:00 ] ::1 /ct/index.php/Home/Project/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000441s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000562s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000662s ]
+NOTIC: [2048] Declaration of Home\Model\ProjectModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) E:\wamp\wamp\www\ct\Application\Home\Model\ProjectModel.class.php 第 5 行.
+NOTIC: [2048] Declaration of Home\Model\ProjectModel::_before_update() should be compatible with Think\Model::_before_update(&$data, $options) E:\wamp\wamp\www\ct\Application\Home\Model\ProjectModel.class.php 第 5 行.
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0631s ]
+SQL: INSERT INTO `project` (`name`,`time`,`status`) VALUES ('黑科技','1480595746','否') [ RunTime:0.1190s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given E:\wamp\wamp\www\ct\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given E:\wamp\wamp\www\ct\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given E:\wamp\wamp\www\ct\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `pro_images` [ RunTime:0.0172s ]
+SQL: SELECT * FROM `project` ORDER BY id DESC LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `pro_images` (`pro_id`,`images`,`sm_images`,`big_images`) VALUES ('19','Project/2016-12-01/5840192308e04.jpg','Project/2016-12-01/sm_5840192308e04.jpg','Project/2016-12-01/big_5840192308e04.jpg') [ RunTime:0.1495s ]
+SQL: INSERT INTO `pro_images` (`pro_id`,`images`,`sm_images`,`big_images`) VALUES ('19','Project/2016-12-01/5840192309c82.jpg','Project/2016-12-01/sm_5840192309c82.jpg','Project/2016-12-01/big_5840192309c82.jpg') [ RunTime:0.0380s ]
+SQL: INSERT INTO `pro_images` (`pro_id`,`images`,`sm_images`,`big_images`) VALUES ('19','Project/2016-12-01/584019230a8a8.jpg','Project/2016-12-01/sm_584019230a8a8.jpg','Project/2016-12-01/big_584019230a8a8.jpg') [ RunTime:0.0345s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000132s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000290s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008613s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008782s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000950s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001093s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001226s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001384s ]
+
+[ 2016-12-01T20:35:48+08:00 ] ::1 /ct/index.php/Home/project/lst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000503s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000934s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001065s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `project`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pro_images` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `pro_images`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000072s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000183s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009341s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009488s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000670s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000785s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001141s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001308s ]
+
+[ 2016-12-01T20:35:57+08:00 ] ::1 /ct/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000606s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000512s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000615s ]
+SQL: SHOW COLUMNS FROM `case` [ RunTime:0.1263s ]
+SQL: SELECT * FROM `case` ORDER BY time DESC LIMIT 4   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `images` [ RunTime:0.0474s ]
+SQL: SELECT * FROM `images`  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `active` [ RunTime:0.0672s ]
+SQL: SELECT * FROM `active` ORDER BY top desc,topTime desc LIMIT 7   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0427s ]
+SQL: SELECT * FROM `project` WHERE ( status='否' ) ORDER BY time DESC LIMIT 6   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `pro_images` [ RunTime:0.0138s ]
+SQL: SELECT * FROM `pro_images`  [ RunTime:0.0009s ]
+SQL: SELECT * FROM `project` WHERE ( status='是' ) ORDER BY time DESC LIMIT 1   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000202s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000380s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0724s ]
+SQL: SELECT * FROM `category` LIMIT 4   [ RunTime:0.0004s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.109847s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.110347s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000935s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001178s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002206s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002611s ]
+
+[ 2016-12-01T20:36:05+08:00 ] ::1 /ct/index.php/Home/Index/project.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000492s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000710s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000820s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `project` ORDER BY time DESC  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pro_images` [ RunTime:0.1724s ]
+SQL: SELECT * FROM `pro_images`  [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000245s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000719s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `category` LIMIT 4   [ RunTime:0.0003s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.054677s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.055163s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001744s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002137s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001662s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001918s ]
+
+[ 2016-12-01T20:36:05+08:00 ] ::1 /ct/index.php/Home/Index/Js/jquery-1.4.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000771s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000939s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001150s ]
+ERR: 非法操作:Js
+
+[ 2016-12-01T20:36:07+08:00 ] ::1 /ct/index.php/Home/Index/img/id/19.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000559s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000698s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000852s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `project` WHERE `id` = 19 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pro_images` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `pro_images` WHERE ( pro_id=19 )  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000094s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000210s ]
+SQL: SELECT * FROM `project` WHERE ( id>19 ) ORDER BY id ASC LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `project` WHERE ( id<19 ) ORDER BY id DESC LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined offset: 0 E:\wamp\wamp\www\ct\Application\Runtime\Cache\Home\a70f4bca7f2b738f5a33ca0b39e7724a.php 第 82 行.
+NOTIC: [8] Undefined offset: 0 E:\wamp\wamp\www\ct\Application\Runtime\Cache\Home\a70f4bca7f2b738f5a33ca0b39e7724a.php 第 82 行.
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `category` LIMIT 4   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018918s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019045s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000626s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000752s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001048s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001261s ]
+
+[ 2016-12-01T20:36:07+08:00 ] ::1 /ct/index.php/Home/Index/img/id/Js/jquery-1.4.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000668s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000851s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000990s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `project` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pro_images` [ RunTime:0.0049s ]
+ERR: 1054:Unknown column 'Js' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `pro_images` WHERE ( pro_id=Js ) 
+ERR: 1054:Unknown column 'Js' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `pro_images` WHERE ( pro_id=Js ) 
+
+[ 2016-12-01T20:36:19+08:00 ] ::1 /ct/index.php/Home/Index/project.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000452s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000710s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000861s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `project` ORDER BY time DESC  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pro_images` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `pro_images`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000095s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000210s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `category` LIMIT 4   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016825s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016930s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000480s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000601s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000633s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000793s ]
+
+[ 2016-12-01T20:36:19+08:00 ] ::1 /ct/index.php/Home/Index/Js/jquery-1.4.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000411s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000653s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000761s ]
+ERR: 非法操作:Js
+
+[ 2016-12-01T20:36:20+08:00 ] ::1 /ct/index.php/Home/Index/img/id/18.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000726s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000606s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000705s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `project` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `pro_images` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `pro_images` WHERE ( pro_id=18 )  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000103s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000249s ]
+SQL: SELECT * FROM `project` WHERE ( id>18 ) ORDER BY id ASC LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `project` WHERE ( id<18 ) ORDER BY id DESC LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0125s ]
+SQL: SELECT * FROM `category` LIMIT 4   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027471s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027631s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001307s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001522s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001168s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001364s ]
+
+[ 2016-12-01T20:36:20+08:00 ] ::1 /ct/index.php/Home/Index/img/id/Js/jquery-1.4.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000440s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000877s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001054s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0061s ]
+SQL: SELECT * FROM `project` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pro_images` [ RunTime:0.0031s ]
+ERR: 1054:Unknown column 'Js' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `pro_images` WHERE ( pro_id=Js ) 
+ERR: 1054:Unknown column 'Js' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `pro_images` WHERE ( pro_id=Js ) 
+
+[ 2016-12-01T20:36:23+08:00 ] ::1 /ct/index.php/Home/Index/cas.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000432s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001032s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001156s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `category`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `case` [ RunTime:0.0039s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\wamp\wamp\www\ct\ThinkPHP\Library\Think\Db\Driver.class.php 第 504 行.
+SQL: SELECT * FROM `case` ORDER BY time DESC  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `images` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `images`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000113s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000221s ]
+NOTIC: [8] Undefined variable: catName E:\wamp\wamp\www\ct\Application\Runtime\Cache\Home\5c09e99035539bede9502473d169ce91.php 第 76 行.
+SQL: SELECT * FROM `category` LIMIT 4   [ RunTime:0.0003s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012980s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013159s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000499s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000600s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001172s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001347s ]
+
+[ 2016-12-01T20:36:24+08:00 ] ::1 /ct/index.php/Home/Index/project.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000438s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000645s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000758s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `project` ORDER BY time DESC  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pro_images` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `pro_images`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000123s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000279s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `category` LIMIT 4   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016640s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016769s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000605s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000719s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000971s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001123s ]
+
+[ 2016-12-01T20:36:24+08:00 ] ::1 /ct/index.php/Home/Index/Js/jquery-1.4.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000374s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000913s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001071s ]
+ERR: 非法操作:Js
+
+[ 2016-12-01T20:36:24+08:00 ] ::1 /ct/index.php/Home/Index/img/id/15.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000496s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000673s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000788s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `project` WHERE `id` = 15 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pro_images` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `pro_images` WHERE ( pro_id=15 )  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000131s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000252s ]
+SQL: SELECT * FROM `project` WHERE ( id>15 ) ORDER BY id ASC LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `project` WHERE ( id<15 ) ORDER BY id DESC LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `category` LIMIT 4   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019537s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019657s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000599s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000710s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000842s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001034s ]
+
+[ 2016-12-01T20:36:25+08:00 ] ::1 /ct/index.php/Home/Index/img/id/Js/jquery-1.4.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000384s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001211s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001409s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `project` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pro_images` [ RunTime:0.0045s ]
+ERR: 1054:Unknown column 'Js' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `pro_images` WHERE ( pro_id=Js ) 
+ERR: 1054:Unknown column 'Js' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `pro_images` WHERE ( pro_id=Js ) 
+
+[ 2016-12-01T20:36:27+08:00 ] ::1 /ct/index.php/Home/Index/project.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000354s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000528s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000619s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `project` ORDER BY time DESC  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pro_images` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `pro_images`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000106s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000220s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `category` LIMIT 4   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015214s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015336s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000535s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000631s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000719s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000859s ]
+
+[ 2016-12-01T20:36:27+08:00 ] ::1 /ct/index.php/Home/Index/Js/jquery-1.4.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000656s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000680s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000828s ]
+ERR: 非法操作:Js
+
+[ 2016-12-01T20:36:28+08:00 ] ::1 /ct/index.php/Home/Index/img/id/19.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000455s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000672s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000784s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `project` WHERE `id` = 19 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pro_images` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `pro_images` WHERE ( pro_id=19 )  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000093s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000203s ]
+SQL: SELECT * FROM `project` WHERE ( id>19 ) ORDER BY id ASC LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `project` WHERE ( id<19 ) ORDER BY id DESC LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined offset: 0 E:\wamp\wamp\www\ct\Application\Runtime\Cache\Home\a70f4bca7f2b738f5a33ca0b39e7724a.php 第 82 行.
+NOTIC: [8] Undefined offset: 0 E:\wamp\wamp\www\ct\Application\Runtime\Cache\Home\a70f4bca7f2b738f5a33ca0b39e7724a.php 第 82 行.
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `category` LIMIT 4   [ RunTime:0.0003s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021196s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021377s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000883s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001086s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001003s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001194s ]
+
+[ 2016-12-01T20:36:28+08:00 ] ::1 /ct/index.php/Home/Index/img/id/Js/jquery-1.4.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000620s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000628s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000765s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `project` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pro_images` [ RunTime:0.0784s ]
+ERR: 1054:Unknown column 'Js' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `pro_images` WHERE ( pro_id=Js ) 
+ERR: 1054:Unknown column 'Js' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `pro_images` WHERE ( pro_id=Js ) 
+
+[ 2016-12-01T20:36:30+08:00 ] ::1 /ct/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000418s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000708s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000852s ]
+SQL: SHOW COLUMNS FROM `case` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `case` ORDER BY time DESC LIMIT 4   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `images` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `images`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `active` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `active` ORDER BY top desc,topTime desc LIMIT 7   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `project` WHERE ( status='否' ) ORDER BY time DESC LIMIT 6   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pro_images` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `pro_images`  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `project` WHERE ( status='是' ) ORDER BY time DESC LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000161s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000281s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `category` LIMIT 4   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020553s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020656s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000548s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000637s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000828s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000999s ]
+
+[ 2016-12-01T20:37:22+08:00 ] ::1 /ct/index.php/Home/Index/img/id/19.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000453s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000628s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000743s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `project` WHERE `id` = 19 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pro_images` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `pro_images` WHERE ( pro_id=19 )  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000159s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000315s ]
+SQL: SELECT * FROM `project` WHERE ( id>19 ) ORDER BY id ASC LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `project` WHERE ( id<19 ) ORDER BY id DESC LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined offset: 0 E:\wamp\wamp\www\ct\Application\Runtime\Cache\Home\a70f4bca7f2b738f5a33ca0b39e7724a.php 第 82 行.
+NOTIC: [8] Undefined offset: 0 E:\wamp\wamp\www\ct\Application\Runtime\Cache\Home\a70f4bca7f2b738f5a33ca0b39e7724a.php 第 82 行.
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `category` LIMIT 4   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018286s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018457s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000931s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001143s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001289s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001477s ]
+
+[ 2016-12-01T20:37:22+08:00 ] ::1 /ct/index.php/Home/Index/img/id/Js/jquery-1.4.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000055s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000773s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000586s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000687s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `project` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pro_images` [ RunTime:0.0034s ]
+ERR: 1054:Unknown column 'Js' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `pro_images` WHERE ( pro_id=Js ) 
+ERR: 1054:Unknown column 'Js' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `pro_images` WHERE ( pro_id=Js ) 
+
+[ 2016-12-01T21:32:17+08:00 ] ::1 /ct/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000539s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000579s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000677s ]
+SQL: SHOW COLUMNS FROM `case` [ RunTime:0.0215s ]
+SQL: SELECT * FROM `case` ORDER BY time DESC LIMIT 4   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `images` [ RunTime:0.0551s ]
+SQL: SELECT * FROM `images`  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `active` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `active` ORDER BY top desc,topTime desc LIMIT 7   [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0084s ]
+SQL: SELECT * FROM `project` WHERE ( status='否' ) ORDER BY time DESC LIMIT 6   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `pro_images` [ RunTime:0.0078s ]
+SQL: SELECT * FROM `pro_images`  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `project` WHERE ( status='是' ) ORDER BY time DESC LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000144s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000261s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `category` LIMIT 4   [ RunTime:0.0005s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024019s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024224s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000576s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000722s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001204s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001385s ]
+
+[ 2016-12-01T21:33:03+08:00 ] ::1 /ct/index.php/Home/Index/project.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000425s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000642s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000738s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `project` ORDER BY time DESC  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pro_images` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `pro_images`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000096s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000209s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `category` LIMIT 4   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016760s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016926s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000620s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000749s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001199s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001389s ]
+
+[ 2016-12-01T21:33:03+08:00 ] ::1 /ct/index.php/Home/Index/Js/jquery-1.4.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000391s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001058s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001173s ]
+ERR: 非法操作:Js
+
+[ 2016-12-01T21:33:04+08:00 ] ::1 /ct/index.php/Home/Index/cas.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000461s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000631s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000743s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `category`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `case` [ RunTime:0.0038s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\wamp\wamp\www\ct\ThinkPHP\Library\Think\Db\Driver.class.php 第 504 行.
+SQL: SELECT * FROM `case` ORDER BY time DESC  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `images` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `images`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000107s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000204s ]
+NOTIC: [8] Undefined variable: catName E:\wamp\wamp\www\ct\Application\Runtime\Cache\Home\5c09e99035539bede9502473d169ce91.php 第 76 行.
+SQL: SELECT * FROM `category` LIMIT 4   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012147s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000576s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000712s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000686s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000838s ]
+
+[ 2016-12-01T21:33:05+08:00 ] ::1 /ct/index.php/Home/Index/build.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000550s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000649s ]
+SQL: SHOW COLUMNS FROM `build` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `build` ORDER BY time DESC  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `build_images` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `build_images`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000113s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000225s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `category` LIMIT 4   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015227s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015355s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000509s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000597s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000976s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001129s ]
+
+[ 2016-12-01T21:33:05+08:00 ] ::1 /ct/index.php/Home/Index/newslst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000504s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000943s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001095s ]
+SQL: SHOW COLUMNS FROM `active` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `active` WHERE `cat` = '最新活动' ORDER BY time DESC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `active` WHERE `cat` = '新闻中心' ORDER BY time DESC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `active` WHERE `cat` = '装修知识' ORDER BY time DESC  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000302s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000490s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `category` LIMIT 4   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020910s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021044s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000788s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000918s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001138s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001321s ]
+
+[ 2016-12-01T21:33:06+08:00 ] ::1 /ct/index.php/Home/Index/about.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000430s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000554s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000651s ]
+SQL: SHOW COLUMNS FROM `company` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `company` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `employ` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `employ` LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000162s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000310s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `category` LIMIT 4   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017201s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017342s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000508s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000597s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000950s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001098s ]
+
+[ 2016-12-01T21:33:06+08:00 ] ::1 /ct/index.php/Home/Index/newslst.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000418s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000601s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000713s ]
+SQL: SHOW COLUMNS FROM `active` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `active` WHERE `cat` = '最新活动' ORDER BY time DESC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `active` WHERE `cat` = '新闻中心' ORDER BY time DESC  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `active` WHERE `cat` = '装修知识' ORDER BY time DESC  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000131s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000242s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `category` LIMIT 4   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016585s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016759s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000639s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000776s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001005s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001191s ]
+
+[ 2016-12-01T21:33:07+08:00 ] ::1 /ct/index.php/Home/Index/build.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000550s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001052s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001256s ]
+SQL: SHOW COLUMNS FROM `build` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `build` ORDER BY time DESC  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `build_images` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `build_images`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000149s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000299s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `category` LIMIT 4   [ RunTime:0.0003s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018133s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018318s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000893s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001080s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001120s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001303s ]
+
+[ 2016-12-01T21:33:07+08:00 ] ::1 /ct/index.php/Home/Index/about.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000376s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000968s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001140s ]
+SQL: SHOW COLUMNS FROM `company` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `company` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `employ` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `employ` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000101s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000208s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `category` LIMIT 4   [ RunTime:0.0003s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014131s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014268s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000530s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000634s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000929s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001087s ]
+

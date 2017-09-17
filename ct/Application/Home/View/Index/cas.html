@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>创特装饰工程有限公司</title>
+<meta name="author" content="" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<link href="__PUBLIC__/Yourphp/Tpl/Home/Default/Public/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link rel="stylesheet" href="__PUBLIC__/Yourphp/Tpl/Home/Default/Public/css/common.css" type="text/css" />
+<link rel="stylesheet" href="__PUBLIC__/Yourphp/Tpl/Home/Default/Public/css/style.css" type="text/css" />
+<script type="text/javascript">var jQuery_1_3_2 = $.noConflict(true);
+</script>
+<script src="__PUBLIC__/Public/Js/jquery.min.js"></script>
+<script src="__PUBLIC__/Public/Js/yourphp.nav.js"></script>
+  <script language="javascript" src="__PUBLIC__/Js/jquery-1.4.2.min.js"></script>
+<script src="__PUBLIC__/Public/Js/yourphp.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Yourphp/Tpl/Home/Default/Public/Js/jquery.artDialog.js?skin=default"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/Js/iframeTools.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/Js/swfupload.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/Js/jquery.validate.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Js/meiqia.js"></script>
+    <style>
+        .box_r_title p a:hover{color:blue}
+    </style>
+</head>
+<body class="lybg">
+<div id="header">
+  <div class="logo"><a href="" target="_blank" ><img src="__PUBLIC__/Uploads/201212/logo.jpg" style="width:260px;" title="" /></a></div>
+  <div class="top_icon">
+    <div class="tel"><img src="__PUBLIC__/Yourphp/Tpl/Home/Default/Public/images/tel.png"  title="" /></div>
+  </div>
+</div>
+<include file="header" />
+      <script type="text/javascript">var APP	 =	 'index.php';
+var ROOT =	 '';
+var PUBLIC = 'Public';
+yourphpnav.init({navid: "nav"});
+var nav = document.getElementById('nav_40');nav.className=nav.className+" on";
+</script>
+      <img src="__PUBLIC__/Yourphp/Tpl/Home/Default/Public/images/banner1.jpg" width="944" height="260" />
+      <div class="clear"></div>
+    </div>
+<div class="box_b"></div>
+
+
+<div class="clear"></div>
+<div class="w980 height10"></div>
+<div class="w980">
+  <div class="page_l">
+      <div class="box_l">
+          <div class="box_l_m"><p style="color:rgba(121,190,247,1.00); font-size:25px; margin-left:15px;">风格/Styles</p><img src="__PUBLIC__/Yourphp/Tpl/Home/Default/Public/images/box_l_line.png" style="margin:10px auto 20px;" />
+              <div class="sidebar" id="tabbar-div">
+                  <?php foreach($cat as $v):?>
+                    <div class="sidenav tab"><a href="{:U(MODULE_NAME.'/Index/cas',array('un'=>$v['id']))}" title="现代简约"><?php echo $v['name']?></a></div>
+                  <?php endforeach;?>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="page_r" id="case">
+      <div class="box_r">
+          <div class="box_r_m" style="background:rgba(255,255,255,0.7); border-radius:15px;width:735px;">
+              <div class="box_r_title"><p id="qqqq" style="color:rgba(121,190,247,1.00); font-size:25px;"><?php echo $catName['name'] ? $catName['name'] : '案例展示';?><span style="color:rgba(121,190,247,1.00); font-size:25px;">/Case Shows</span></p></div>
+          </div>
+      </div>
+      <?php if(!empty($case)){
+          foreach($case as $v):
+      ?>
+      <div class="box_r mtop10">
+          <div class="anli348">
+              <div class="anli348_tu">
+                  <a class="a" pid="<?php echo $v['id']?>" target="_self"><img src="/ct/Uploads/<?php foreach($img as $k){
+            if($k['case_id'] == $v['id']){
+              echo $k['big_images'];
+              break;
+            }
+          }?>" width="212" height="148" border="0"></a>
+              </div>
+              <div class="anli348_title"><?php echo $v['name']?></div>
+          </div>
+      </div>
+      <?php endforeach;?>
+      <?php }else{?>
+      <div class="box_r mtop10">
+          <?php echo '抱歉！暂无该风格实例！';?>
+      </div>
+      <?php }?>
+
+  </div>
+
+    <!-- 案例展示 详细内容-->
+    <div class="page_r" id="content" style="display:none">
+        <div class="box_r">
+            <div class="box_r_m" style="background:rgba(255,255,255,0.7); border-radius:15px;width:735px;height:35px;">
+                <div class="box_r_title"><p style="color:rgba(121,190,247,1.00); font-size:18px;" id="pp"><a href="{:U(MODULE_NAME.'/Index/cas')}"></a></p></div>
+            </div>
+        </div>
+
+        <div class="box_r mtop10" id="img">
+
+        </div>
+    </div>
+
+</div>
+</div>
+</div>
+
+<include file="footer" />
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+
+        $('.a').click(function(){
+            var q =$(this).parents('.anli348_tu').next('.anli348_title').text();
+            var k = $('#qqqq').text().split('/');
+            var str = k[0]+'>>>>';
+            var x = $(this).attr('pid');      //获取a标签中pid属性
+            $.ajax({
+                type:'get',
+                url:"__CONTROLLER__/caseShow/id/"+x,
+                success:function(data){
+                    //$('#content').html(data.content);
+                    //$('#cont').show().prevAll('.page_r').hide();
+                    $.each(data,function(name,value){
+                        $('#case').hide();
+                        $('#content #img').append("<img src=/ct/Uploads/"+value.big_images+"><br/><br/>").css('margin-left','50px');
+                    });
+                }
+            });
+            $('#pp a').html(str);
+            $('#pp').append(q);
+            $('#content').show();
+        });
+    });
+</script>

@@ -1,0 +1,25 @@
+[ 2016-05-17T10:09:43+08:00 ] ::1 /ct/Uploads/uuuu.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000583s ]
+
+[ 2016-05-17T10:10:05+08:00 ] ::1 /ct/Uploads/uuuu.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000376s ]
+
+[ 2016-05-17T10:10:08+08:00 ] ::1 /ct/Uploads/uuuu.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000585s ]
+
+[ 2016-05-17T10:10:28+08:00 ] ::1 /ct/Uploads/uuuu.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000605s ]
+
+[ 2016-05-17T10:10:28+08:00 ] ::1 /ct/Uploads/uuuu.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000578s ]
+

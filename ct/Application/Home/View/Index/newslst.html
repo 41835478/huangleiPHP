@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>创特装饰工程有限公司</title>
+<meta name="author" content="" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<link href="__PUBLIC__/Yourphp/Tpl/Home/Default/Public/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link rel="stylesheet" href="__PUBLIC__/Yourphp/Tpl/Home/Default/Public/css/common.css" type="text/css" />
+<link rel="stylesheet" href="__PUBLIC__/Yourphp/Tpl/Home/Default/Public/css/style.css" type="text/css" />
+<script type="text/javascript">var jQuery_1_3_2 = $.noConflict(true);
+</script>
+<script src="__PUBLIC__/Public/Js/jquery.min.js"></script>
+<script src="__PUBLIC__/Public/Js/yourphp.nav.js"></script>
+<script src="__PUBLIC__/Public/Js/yourphp.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Yourphp/Tpl/Home/Default/Public/Js/jquery.artDialog.js?skin=default"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/Js/iframeTools.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/Js/swfupload.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/Js/jquery.validate.js"></script>
+  <script type="text/javascript" src="__PUBLIC__/Js/meiqia.js"></script>
+</head>
+<body class="lybg">
+<div id="header">
+  <div class="logo"><a href=""><img src="__PUBLIC__/Uploads/201212/logo.jpg" style="width:260px;" alt=""></a></div>
+  <div class="top_icon">
+    <div class="tel"><img src="__PUBLIC__/Yourphp/Tpl/Home/Default/Public/images/tel.png" alt="" /></div>
+  </div>
+</div>
+<include file="header" />
+      <script type="text/javascript">var APP	 =	 'index.php';
+var ROOT =	 '';
+var PUBLIC = 'Public';
+yourphpnav.init({navid: "nav"});
+var nav = document.getElementById('nav_25');nav.className=nav.className+" on";
+</script>
+      <img src="__PUBLIC__/Yourphp/Tpl/Home/Default/Public/images/banner5.jpg" width="944" height="260" alt="" />
+      <div class="clear"></div>
+    </div>
+    <div class="box_b"></div>
+  </div>
+</div>
+<div class="clear"></div>
+<div class="w980 height10"></div>
+<div class="w980">
+  <div class="page_l">
+    <div class="box_l">
+      <div class="box_l_t"></div>
+      <div class="box_l_m"><p style="color:rgba(121,190,247,1.00); font-size:25px; margin-left:15px;">关于/About</p><img src="__PUBLIC__/Yourphp/Tpl/Home/Default/Public/images/box_l_line.png" style="margin:10px auto 20px;" />
+        <div class="sidebar">
+         <div class="sidenav tab"><a title="公司介绍" class="moren">最新活动</a></div>
+          <div class="sidenav tab"><a title="最新活动">新闻中心</a></div>
+          <div class="sidenav tab"><a title="人才招聘">装修知识</a></div>
+          
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="box_l_b"></div>
+    </div>
+   
+  </div>
+  <div class="page_r">
+    <?php foreach($actData as $v):?>
+    <div class="box_r">
+      <div class="box_r_m">
+        <dl style="width:700px;">
+          <dt style="margin-left:30px;"><a class="a" pid="<?php echo $v['id']?>" target="_self" title="朗域装饰全景体验馆1月12日盛大开业"><img src="/ct/Uploads/<?php echo $v['images']?>" alt="朗域装饰全景体验馆1月12日盛大开业" width="220" height="160" border="0" /></a></dt>
+          <dd style="width:350px;float:left;margin-left:50px;margin-right:0px;">
+            <h1 style="width:350px;"><a class="a" pid="<?php echo $v['id']?>" target="_self" title="朗域装饰全景体验馆1月12日盛大开业"><em>[<?php echo date("Y-m-d",$v['time']);?>]</em><?php echo $v['title']?></a></h1>
+            <p><a class="a" pid="<?php echo $v['id']?>" target="_self"><?php echo $v['summary']?><span>【点击查看更多】</span></a></p>
+          </dd>
+        </dl>
+        <div class="clear"></div>
+      </div>
+      <div class="box_r_b"></div>
+    </div>
+    <?php endforeach;?>
+
+    <div class="clear"></div>
+    <div id="pages" class="pagee"></div>
+  </div>
+
+  <div class="page_r" style="display:none">
+    <?php foreach($newData as $v):?>
+    <div class="box_r">
+      <div class="box_r_m">
+        <dl style="width:700px;">
+          <dt style="margin-left:30px;"><a class="a" pid="<?php echo $v['id']?>" target="_self" title="朗域装饰全景体验馆1月12日盛大开业"><img src="/ct/Uploads/<?php echo $v['images']?>" alt="朗域装饰全景体验馆1月12日盛大开业" width="220" height="160" border="0" /></a></dt>
+          <dd style="width:350px;float:left;margin-left:50px;margin-right:0px;">
+            <h1 style="width:350px;"><a class="a" pid="<?php echo $v['id']?>" target="_self" title="朗域装饰全景体验馆1月12日盛大开业"><em>[<?php echo date("Y-m-d",$v['time']);?>]</em><?php echo $v['title']?></a></h1>
+            <p><a class="a" pid="<?php echo $v['id']?>" target="_self"><?php echo $v['summary']?><span>【点击查看更多】</span></a></p>
+          </dd>
+        </dl>
+        <div class="clear"></div>
+      </div>
+      <div class="box_r_b"></div>
+    </div>
+    <?php endforeach;?>
+
+    <div class="clear"></div>
+    <div id="pages" class="pagee"></div>
+  </div>
+
+  <div class="page_r" style="display:none">
+    <?php foreach($zhuData as $v):?>
+    <div class="box_r">
+      <div class="box_r_m">
+        <dl style="width:700px;">
+          <dt style="margin-left:30px;"><a class="a" pid="<?php echo $v['id']?>" target="_self" title="朗域装饰全景体验馆1月12日盛大开业"><img src="/ct/Uploads/<?php echo $v['images']?>" alt="朗域装饰全景体验馆1月12日盛大开业" width="220" height="160" border="0" /></a></dt>
+          <dd style="width:350px;float:left;margin-left:50px;margin-right:0px;">
+            <h1 style="width:350px;"><a class="a" pid="<?php echo $v['id']?>" target="_self" title="朗域装饰全景体验馆1月12日盛大开业"><em>[<?php echo date("Y-m-d",$v['time']);?>]</em><?php echo $v['title']?></a></h1>
+            <p><a class="a" pid="<?php echo $v['id']?>" target="_self"><?php echo $v['summary']?><span>【点击查看更多】</span></a></p>
+          </dd>
+        </dl>
+        <div class="clear"></div>
+      </div>
+      <div class="box_r_b"></div>
+    </div>
+    <?php endforeach;?>
+
+    <div class="clear"></div>
+    <div id="pages" class="pagee"></div>
+  </div>
+
+  <!-- 新闻内容-->
+  <div class="page_r" id="cont" style="display:none">
+    <div class="box_r">
+      <div class="box_r_m">
+        <div id="content">
+
+        </div>
+        <div id="pages" class="pagee"></div>
+        <div class="clear"></div>
+      </div>
+      <div class="box_r_b"></div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+<include file="footer" />
+<div class="clear"></div>
+</body><script type="text/javascript" src="http://freemoban.com/js/a.js"></script> 
+</html>
+<script>
+  $(document).ready(function(){
+    $('.tab').click(function(){
+      var a = $(this).index();
+      $(this).children('a').addClass('moren').parent().siblings().children().removeClass('moren');
+      $('.page_r').eq(a).show().siblings('.page_r').hide();
+    });
+    $('.a').click(function(){
+      var x = $(this).attr('pid');      //获取a标签中pid属性
+      $.ajax({
+        type:'get',
+        url:"__CONTROLLER__/ajaxShow/id/"+x,
+        success:function(data){
+            $('#content').html("<p style='font-size:20px;color:black;text-align:center'>"+data.title+"</p><br/><br/>"+data.content);
+            $('#cont').show().prevAll('.page_r').hide();
+
+        }
+      });
+    });
+  });
+</script>
