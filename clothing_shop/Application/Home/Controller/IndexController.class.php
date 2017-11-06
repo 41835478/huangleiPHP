@@ -5,6 +5,7 @@ class IndexController extends Controller
 {
 
     public function index(){
+
         $model = D('category');
         $catData = $model->getNavCatTree();
 
